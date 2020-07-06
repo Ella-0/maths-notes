@@ -10,3 +10,8 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: b1-00-subsets-of-real-numbers.tex
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: b1-00-subsets-of-real-numbers
+          path: b1-00-subsets-of-real-numbers.pdf
