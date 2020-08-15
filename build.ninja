@@ -1,0 +1,5 @@
+rule tex
+  command = pdflatex -output-directory build -file-line-error -halt-on-error -interaction=nonstopmode -recorder $in
+
+build build/prep.pdf: tex prep.tex
+build build/heg-prep.pdf: tex heg-prep.tex

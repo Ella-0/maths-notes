@@ -1,0 +1,368 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+% or 
+\usepackage{amssymb}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\title{A-Level Hegarty Prep}
+\maketitle
+
+\section{Surds}
+
+\subsection{Simplifying Surds}
+
+\subsubsection{What is a Surd}
+A surd is an irrational number that can be represented as a root and a rational coefficient.
+they are represented in the form:
+\begin{equation}
+	a\sqrt[b]{c}
+\end{equation}
+For example:
+\begin{equation}
+	2\sqrt[3]{5}
+\end{equation}
+
+\subsubsection{Rules of Surds}
+Remember the following:
+\begin{equation}
+	\sqrt{a} \times \sqrt{b} = \sqrt{a \times b}
+\end{equation}
+For Example:
+\begin{equation}
+	\sqrt{9} \times \sqrt{4} = \sqrt{9 \times x} = \sqrt{36}
+\end{equation}
+We know this works because:
+\begin{equation}
+	3 \times 4 = 6
+\end{equation}
+This also means that the following is true since division is just multiplication by the reciprocal:
+\begin{equation}
+	\frac{\sqrt{a}}{\sqrt{b}} = \sqrt{\frac{a}{b}}
+\end{equation}
+However, be careful about the following:
+\begin{equation}
+	\sqrt{a} + \sqrt{b} \ne \sqrt{a + b}
+\end{equation}
+For example:
+\begin{equation}
+	\sqrt{9} + \sqrt{16} \ne \sqrt{25}
+\end{equation}
+We know this because:
+\begin{equation}
+	3 + 4 \ne 5
+\end{equation}
+And because subtraction is just addition of a negated number the following is true:
+\begin{equation}
+	\sqrt{a} - \sqrt{b} \ne \sqrt{a - b}
+\end{equation}
+
+\pagebreak 
+
+\subsubsection{How to simplify Surds}
+The first step when simplifying a surd is to find the highest factor of the number that is also square.
+
+Given the following surd:
+\begin{equation}
+	\sqrt{20}
+\end{equation}
+
+The highest square factor is 4. This means that we can rewrite the surd as the following:
+\begin{equation}
+	\sqrt{4 \times 5}
+\end{equation}
+We can then split up the surd into two different surds:
+
+\begin{equation}
+	\sqrt{4} \times \sqrt{5}
+\end{equation}
+Then since 4 is square we can evaluate the square root giving us the following:
+\begin{equation}
+	2 \sqrt{5}
+\end{equation}
+
+\subsection{How to add Surds}
+The first step when adding two surds is to simplify the two surds so that they have the same root part:
+
+Given the following sum:
+\begin{equation}
+	\sqrt{80} + \sqrt{20}
+\end{equation}
+
+We can construct the following equivalent expression:
+\begin{equation}
+	\sqrt{16 \times 5} + \sqrt{4 \times 5} = 4\sqrt{5} + 2\sqrt{5}
+\end{equation}
+
+Then we can simply add together the coefficients:
+\begin{equation}
+	4\sqrt{5} + 2\sqrt{5} = 6\sqrt{5}
+\end{equation}
+
+\pagebreak 
+
+\section{Powers and Indices}
+
+\subsection{Laws of Indices}
+
+\subsubsection{Multiplying Indices}
+
+When multiplying indices we can just add together the exponents.
+\begin{equation}
+	x^{p + q} \equiv x^{p} \times x^{q}
+\end{equation}
+\\
+For example:
+\begin{align*}
+	x^3 \times x^4 &= \overbrace{
+		\underbrace{x \times x \times x}_{x^3} \times
+		\underbrace{x \times x \times x \times x}_{x^4}}^{x^7}\\
+	&\therefore\\
+	x^3 \times x^4 &= x^7
+\end{align*}
+
+\subsection{Powers of Indices}
+When we have an index to the power of another number we can multiply the two exponents together.
+
+\begin{equation}
+	x^{pq} \equiv (x^{p})^{q} \equiv (x^{q})^{p} 
+\end{equation}
+\\
+For example:
+\begin{equation}
+	(x^4)^3 = x^{4 \times 3} = x^{12}
+\end{equation}
+
+\subsubsection{Division}
+When dividing indices we can simply subtract the two exponents as they cancel each other out.
+
+\begin{equation}
+	x^{p - q} \equiv \frac{x^{p}}{x^{q}}
+\end{equation}
+\\
+For example:
+\begin{equation}
+	\frac{x^4}{x^3} = \frac
+		{\overbrace{x \times x \times x}^\text{cancelled} \times x}
+		{\underbrace{x \times x \times x}_\text{cancelled}}
+		= \frac{x}{1} = x
+\end{equation}
+
+\subsubsection{Rational Exponents}
+When the exponent is a rational number, i.e. it can be represented as a fraction,
+the index can be represented as a combination of an integer root and power. Where
+the numerator becomes the exponent and the denominator becomes the index number of the root.
+
+\begin{equation}
+	\label{simple_equation}
+	\sqrt[q]{x}^{p} \equiv x^{\frac{p}{q}}
+\end{equation}
+
+
+\begin{equation}
+	\label{simple_equation}
+	\sqrt[p]{x} \equiv x^{\frac{1}{p}}
+\end{equation}
+
+\subsubsection{Zero}
+Anything to the power of 0 is always 1 including 0.
+
+\begin{equation}
+	\label{simple_equation}
+	x^0 = 1
+\end{equation}
+
+\subsubsection{Reciprocal}
+When the exponent is $-1$, the expression is equivalent to the reciprocal of $x$
+
+\begin{equation}
+	\label{simple_equation}
+	x^{-1} \equiv \frac{1}{x}
+\end{equation}
+
+\subsubsection{Negative Exponents}
+When the exponent is negative, the expression is equivalent to the reciprocal of x to the equivalent positive power.
+
+\begin{equation}
+	\label{simple_equation}
+	x^{-p} \equiv \frac{1}{x^p}
+\end{equation}
+
+\subsection{Exponential Equations}
+
+\subsubsection{Solving simple Exponential equations}
+when given an equation in the form $a^x = b$ and we
+are tasked with working out the value of x we first
+need to write $b$ in the form $a^y$. which gives us:
+\begin{equation}
+	a^x = a^y
+\end{equation}
+Because of this, $x$ and $y$ must be the same so the
+following is true:
+\begin{equation}
+	x = y
+\end{equation}
+\\
+For example:
+\begin{align*}
+	5^x &= 125\\
+	125 &= 5^3\\
+	&\therefore\\
+	5^x &= 5^3\\
+	&\therefore\\
+	x &= 3
+\end{align*}
+
+\section{Graphs}
+
+\subsection{Gradient of a Line}
+To calculate the gradient of a line we need to choose two points on
+a line and subtract the one with the largest $x$ from the one with the largest $x$
+and then dividing the $y$ value of the resulting row vector by the $x$ value.
+\\\\
+Where $a$ is the coordinate with the largest $x$ and $b$ is the coordinate with the smallest $x$ the following is true:
+\begin{align*}
+	d &= a - b\\
+	m &= \frac{d_y}{d_x}
+\end{align*}
+\\
+Given that $(10, 3)$ and $(4, 1)$ are points on a line, we can construct the following example:
+\begin{align*}
+	d &= (10, 3) - (4, 1) = (6, 2)\\
+	m &= \frac{2}{6} = \frac{1}{3}
+\end{align*}
+
+\subsection{Equation of a Line}
+To calculate the equation of a line the we need to first calculate the gradient using the previous method
+then construct an equation in the form $y = mx + c$, substitute in the $x$ and $y$ values of a coordinate on the
+line and solve to get $c$
+\\\\
+Continuing from the previous example:
+\begin{align*}
+	y &= \frac{x}{3} + c\\
+	1 &= \frac{4}{3} + c\\
+	c &= 1 - \frac{4}{3} = -\frac{1}{3}\\
+	&\therefore\\
+	y &= \frac{x}{3} - \frac{1}{3} = \frac{x - 1}{3}
+\end{align*}
+We can then check our answer against the other coordinate we used to calculate the gradient.
+
+\begin{align*}
+	y &= \frac{x - 1}{3}\\
+	3 &= \frac{10 - 1}{3}\\
+	3 &= \frac{9}{3}\\
+	3 &= 3
+\end{align*}
+
+\subsection{Mid Point of a Line}
+To calculate the mid point of a line we take the sum of the two end points and divide by 2.
+\begin{equation}
+	p = \frac{a + b}{2}
+\end{equation}
+\\
+For example:
+\begin{align*}
+	p &= \frac{(10, 3) + (4, 1)}{2}\\
+	p &= \frac{(14. 4)}{2}\\
+	p &= (7, 2)
+\end{align*}
+
+\pagebreak
+
+\section{Distance}
+The distance between two points is calculated using Pythagoras $a^2 + b^2 = c^2$.\\
+Given the points $A$ and $B$ that construct the line segment $AB$. The length of $AB$ can be expressed as follows:
+
+\begin{equation}
+	|AB| = \sqrt{(A_x - B_x)^2 + (A_y - B_y)^2}
+\end{equation}
+This can be adapted to $n$ dimensional space using the following:
+
+\begin{equation}
+	|AB| = \sqrt{\sum_{m = 1}^{n} (A_m - B_m)^2}
+\end{equation}
+For Example,
+Where $A = (3, -6)$ and $B = (7, -2)$ The length of $AB$ can be calculated using the following:
+
+\begin{align*}
+	&\text{We can start by calculating the parts for Pythagoras ($a$ and $b$)}\\
+	a &= A_x - B_x = 3 - 7 = -4\\
+	b &= A_y - B_y = -6 + 2 = -4 \\
+	&\text{We can then substitute these values into Pythagoras to get a final length}\\
+	|AB| &= \sqrt{a^2 + b^2} = \sqrt{(-4)^2 + (-4)^2} = \sqrt{16 + 16} = \sqrt{32}\\
+	&\text{We can then simplify the surd}\\
+	|AB| &= \sqrt{32} = 64\sqrt{2}
+\end{align*}
+
+
+\section{Parallel Lines}
+Lines are parallel if they have the same gradient. For example $y = 2x + 3$ and $y = 2x - 2$ are parallel because they
+have the same gradient of $2$
+
+\subsection{Calculating Equations of Parallel lines}
+Given an equation of a line in the form  $y = mx + c_1$, and a point of a another line $p$ that is parallel.
+We can write the equation of the second line in the form $y = mx + c_2$.
+
+\begin{align*}
+	&\text{We start by substituting $p$ and rearranging to work out $c_2$}\\
+	p_y &= mp_x + c_2 \\
+	c_2 &= p_y - mp_x \\
+	&\text{We can then substitute our value for $c_2$ into the final equation}\\
+	y &= mx + (p_y - mp_x)
+\end{align*}
+For example, given the initial equation of $y = 2x + 3$ and knowing that the second equation passes through $(3, 4)$,
+we can calculate the second equation by the following:
+
+\begin{align*}
+	&\text{We start by substituting $p$ and rearranging to work out $c_2$}\\
+	p_y &= mp_x + c_2 \\
+	4 & = 2 \times 3 + c_2 \\
+	c_2 &= 4 - 2 \times 3 = -2\\
+	&\text{We can then substitute our value for $c_2$ into the final equation}\\
+	y &= mx + c_2\\
+	y &= 2x -2
+\end{align*}
+\section{Perpendicular Lines}
+Perpendicular lines are like parallel lines except the gradient of one line is the negative reciprocal of the other.
+
+\begin{equation}
+	m_2 = -\frac{1}{m_1}
+\end{equation}
+
+\subsection{Calculating Equations of Perpendicular lines}
+Like with parallel lines, when given an equation of one line, and a point the other line passes through, we can calculate
+the equation of the second line.
+\begin{align*}
+	&\text{We start by calculating the gradient of the second line}\\
+	m_2 &= -\frac{1}{m_1}\\
+	&\text{Then we substitute the new gradient}\\
+	y &= -\frac{x}{m_1} + c_2\\
+	&\text{The we substituting $p$ and rearrange to work out $c_2$}\\
+	p_y &=  -\frac{p_x}{m_1}+ c_2 \\
+	c_2 &= p_y + \frac{p_x}{m_1}\\
+	&\text{We can then substitute our value for $c_2$ into the final equation}\\
+	y &= -\frac{x}{m_1} + p_y + \frac{p_x}{m_1}\\
+	&\text{We can then simplify this to}\\
+	y &= -\frac{x + p_x}{m1} + p_y
+\end{align*}
+For example, given the initial equation of $y = 2x + 3$ and knowing that the second equation passes through $(3, 4)$,
+we can calculate the second equation by the following:
+
+\begin{align*}
+	&\text{We start by calculating the gradient of the second line}\\
+	m_2 &= -\frac{1}{m_1} = -\frac{1}{2}\\
+	&\text{Then we substitute the new gradient}\\
+	y &= -\frac{x}{2} + c_2\\
+	&\text{The we substituting $p$ and rearrange to work out $c_2$}\\
+	y &= m_2x + c_2\\
+	4 &=  -\frac{3}{2} + c_2 \\
+	c_2 &= 4 + \frac{3}{2}\\
+	&\text{We can then substitute our value for $c_2$ into the final equation and simplify}\\
+	y &= -\frac{x}{2} + 4 + \frac{3}{2}\\
+	y &= -\frac{x - 3}{2} + 4\\
+	y &= -\frac{x - 11}{2}
+\end{align*}
+\end{document}
