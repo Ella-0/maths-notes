@@ -9,9 +9,9 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: b1-00-subsets-of-real-numbers.tex
+          root_file: prep.tex
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: b1-00-subsets-of-real-numbers
-          path: b1-00-subsets-of-real-numbers.pdf
+          name: prep
+          path: prep.pdf
