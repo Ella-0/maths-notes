@@ -3,3 +3,4 @@ rule tex
 
 build build/prep.pdf: tex prep.tex
 build build/heg-prep.pdf: tex heg-prep.tex
+build bulid/lessons.pdf: tex lessons.tex

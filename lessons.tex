@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+% or 
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\pgfplotsset{compat = newest}
+\usepackage{cancel}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\title{Maths Lessons}
+\maketitle
+
+\section{2020-09-09 Revision}
+\subsection{Indices}
+\subsubsection{Work Sheet}
+\begin{align*}
+	3^4 &\Rightarrow 81 \\
+	2^6 &\Rightarrow 64 \\
+	4^{\frac{1}{2}} &\Rightarrow 2 \\
+	6^0 &\Rightarrow 1 \\
+	5^{-2} &\Rightarrow \frac{1}{25} \\
+	64^{\frac{1}{3}} &\Rightarrow 4 \\
+	16^{-\frac{1}{2}} &\Rightarrow \frac{1}{4} \\
+	8^{\frac{5}{3}} &\Rightarrow 32 \\
+	36^{-\frac{3}{2}} &\Rightarrow \frac{1}{216} \\
+	\left ( \frac{1}{2} \right )^{-1} &\Rightarrow 2 \\
+	\left ( \frac{25}{9} \right )^{-\frac{1}{2}} &\Rightarrow \frac{3}{5} \\
+	\left ( \frac{27}{64} \right )^{-\frac{2}{3}} &\Rightarrow \frac{16}{9} \\
+	\\
+	3^11 \times 3^{-4} \div 3^3 &\Rightarrow 81 \\
+	\left ( 2^5 \right )^3 \times \left ( 2^7 \right )^{-2} &\Rightarrow 2 \\
+	\frac{5^6}{5^5 \times 5^3} &\Rightarrow \frac{1}{25} \\
+	\\
+	2^3 \times 16^{\frac{1}{2}} &\Rightarrow 32 \\
+	\frac{3^5 \times 5^3}{\sqrt{81 \times 25}} &\Rightarrow 675
+\end{align*}
+
+\subsubsection{Questions}
+
+\begin{align*}
+	\frac{6x^4 + 10x^6}{2x} &\Rightarrow 3x^3 + 5x^5 \\
+	\frac{3x^5 - x^7}{x} &\Rightarrow 3x^4 - x^6 \\
+	\frac{2x^4 - 4x^2}{4x} &\Rightarrow \frac{x^3}{2}-x \\
+	\frac{8x^3 + 5x}{2x} &\Rightarrow 4x^2 + 5 \\
+	\frac{7x^7 + 5x^2}{5x} &\Rightarrow \frac{7x^6}{5} + x \\
+	\frac{9x^4 - 5x^2}{3x} &\Rightarrow 3x^3 - \frac{5x}{3} 
+\end{align*}
+
+\subsubsection{Quadratics}
+Quadratics are second degree polynomials. They usually contain an $x^2$ and can be written
+in the form $ax^2 + bx + c$.
+\\
+The 4 main methods of solving quadratics are as follows:
+\begin{itemize}
+	\item Factorise
+	\item Quadratic Formula
+	\item Complete the Square
+	\item Graphically
+\end{itemize}
+
+\break
+\subsubsection*{Factorise}
+\begin{enumerate}
+	\item \begin{gather}
+			x^2 -x -6 = 0 \Rightarrow (x - 3)(x + 2)=0 \\
+			\therefore \\
+			x = -2,3
+		\end{gather}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-3,xmax=5,
+					ymin=-10,ymax=15,
+					ytick=\empty,xtick=\empty,
+					axis lines=middle
+				]
+					\addplot[samples=100,domain=-5:5] {(x - 3) * (x + 2)};
+					\addplot[only marks,mark=o] coordinates{(-2,0) (3,0) (0,-6)};
+					\addplot[] coordinates{(3,-1)} node[label=0:{$3$}]{};
+					\addplot[] coordinates{(-3,-1)} node[label=0:{$-2$}]{};
+					\addplot[] coordinates{(-1,-6)} node[label=0:{$-6$}]{};
+					\legend{$y=x^2 -x -6$}
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+
+
+	\item \begin{gather}
+			x^2 + 7x + 12 = 0 \Rightarrow (x + 4)(x + 3)=0 \\
+			\therefore \\
+			x = -4,-3
+		\end{gather}
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					xmin=-5,xmax=1,
+					ymin=-1,ymax=15,
+					ytick=\empty,xtick=\empty,
+					axis lines=middle
+				]
+					\addplot[samples=100,domain=-5:5] {(x + 4) * (x + 3)};
+					\addplot[only marks,mark=o] coordinates{(-4,0) (-3,0) (0,12)};
+					\legend{$y=x^2 + 7x + 12$}
+					\addplot[] coordinates{(-4,1)} node[label=0:{$3$}]{};
+					\addplot[] coordinates{(-3,-0.5)} node[label=0:{$-2$}]{};
+					\addplot[] coordinates{(-1,12)} node[label=0:{$12$}]{};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+\end{enumerate}
+
+\subsubsection*{Quadratic Formula}
+The quadratic formula is used to find the solution to arbitrary quadratics in the form $ax^2 + bx + c$. It is as follows:
+
+\begin{equation}
+	\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+The discriminant is as follows:
+\begin{equation}
+	D = b^2 - 4ac
+\end{equation}
+When the discriminant is positive we have two solutions:
+\begin{equation}
+	D > 0
+\end{equation}
+When the discriminant is equal to $0$ we have one solution:
+\begin{equation}
+	D = 0
+\end{equation}
+When the discriminant is negative we have no real solutions:
+\begin{equation}
+	D < 0
+\end{equation}
+Instead we have complex solutions in the form $ai$ where $i = \sqrt{-1}$.
+
+\section{2020-09-10 Surds}
+
+\begin{enumerate}
+	\item Show that $\frac{\sqrt{75} - \sqrt{27}}{\sqrt{3}}$ can be written as a single integer
+		\begin{equation}
+			\sqrt{9 \times 25} - \sqrt{9 \times 9} = 3 \times 5 - 3 \times 3 = 6
+		\end{equation}
+	\item
+		\begin{equation}
+			\sqrt{98} = \sqrt{49 \times 2} = 7\sqrt{2}
+		\end{equation}
+	\item
+		\begin{equation}
+			\sqrt{200} = \sqrt{2 \times 100} = 10\sqrt{2}
+		\end{equation}
+
+	\item
+		\begin{equation}
+			\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}
+		\end{equation}
+\end{enumerate}
+
+\subsection{Rationalising the Denominator}
+
+\begin{gather*}
+	\frac{1}{\sqrt{3}} \times \overbrace{\frac{\sqrt{3}}{\sqrt{3}}}^{\equiv 1} = \frac{\sqrt{3}}{3}\\
+	\\
+	\frac{3}{3 - \sqrt{2}} \times \overbrace{\frac{3 + \sqrt{2}}{3 + \sqrt{2}}}^{\equiv 1} = \frac{9 + 3\sqrt{2}}{7}\\
+	\\
+	\frac{3 + \sqrt{a}}{2 - \sqrt{a}} \times \overbrace{\frac{2 + \sqrt{a}}{2 + \sqrt{a}}}^{\equiv 1} = \frac{6 - \sqrt{a} - a}{4 - a}\\
+	\\
+\end{gather*}
+
+\enddocument
+
+
