@@ -5,6 +5,8 @@
 % or 
 \usepackage{amssymb}
 
+\usepackage{mathtools}
+
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
@@ -19,43 +21,7 @@
 \title{Maths Lessons}
 \maketitle
 
-\section{2020-09-09 Revision}
-\subsection{Indices}
-\subsubsection{Work Sheet}
-\begin{align*}
-	3^4 &\Rightarrow 81 \\
-	2^6 &\Rightarrow 64 \\
-	4^{\frac{1}{2}} &\Rightarrow 2 \\
-	6^0 &\Rightarrow 1 \\
-	5^{-2} &\Rightarrow \frac{1}{25} \\
-	64^{\frac{1}{3}} &\Rightarrow 4 \\
-	16^{-\frac{1}{2}} &\Rightarrow \frac{1}{4} \\
-	8^{\frac{5}{3}} &\Rightarrow 32 \\
-	36^{-\frac{3}{2}} &\Rightarrow \frac{1}{216} \\
-	\left ( \frac{1}{2} \right )^{-1} &\Rightarrow 2 \\
-	\left ( \frac{25}{9} \right )^{-\frac{1}{2}} &\Rightarrow \frac{3}{5} \\
-	\left ( \frac{27}{64} \right )^{-\frac{2}{3}} &\Rightarrow \frac{16}{9} \\
-	\\
-	3^11 \times 3^{-4} \div 3^3 &\Rightarrow 81 \\
-	\left ( 2^5 \right )^3 \times \left ( 2^7 \right )^{-2} &\Rightarrow 2 \\
-	\frac{5^6}{5^5 \times 5^3} &\Rightarrow \frac{1}{25} \\
-	\\
-	2^3 \times 16^{\frac{1}{2}} &\Rightarrow 32 \\
-	\frac{3^5 \times 5^3}{\sqrt{81 \times 25}} &\Rightarrow 675
-\end{align*}
-
-\subsubsection{Questions}
-
-\begin{align*}
-	\frac{6x^4 + 10x^6}{2x} &\Rightarrow 3x^3 + 5x^5 \\
-	\frac{3x^5 - x^7}{x} &\Rightarrow 3x^4 - x^6 \\
-	\frac{2x^4 - 4x^2}{4x} &\Rightarrow \frac{x^3}{2}-x \\
-	\frac{8x^3 + 5x}{2x} &\Rightarrow 4x^2 + 5 \\
-	\frac{7x^7 + 5x^2}{5x} &\Rightarrow \frac{7x^6}{5} + x \\
-	\frac{9x^4 - 5x^2}{3x} &\Rightarrow 3x^3 - \frac{5x}{3} 
-\end{align*}
-
-\subsubsection{Quadratics}
+\section{Quadratics}
 Quadratics are second degree polynomials. They usually contain an $x^2$ and can be written
 in the form $ax^2 + bx + c$.
 \\
@@ -67,63 +33,29 @@ The 4 main methods of solving quadratics are as follows:
 	\item Graphically
 \end{itemize}
 
-\break
-\subsubsection*{Factorise}
-\begin{enumerate}
-	\item \begin{gather}
-			x^2 -x -6 = 0 \Rightarrow (x - 3)(x + 2)=0 \\
-			\therefore \\
-			x = -2,3
-		\end{gather}
-		\begin{center}
-			\begin{tikzpicture}
-				\begin{axis}[
-					xmin=-3,xmax=5,
-					ymin=-10,ymax=15,
-					ytick=\empty,xtick=\empty,
-					axis lines=middle
-				]
-					\addplot[samples=100,domain=-5:5] {(x - 3) * (x + 2)};
-					\addplot[only marks,mark=o] coordinates{(-2,0) (3,0) (0,-6)};
-					\addplot[] coordinates{(3,-1)} node[label=0:{$3$}]{};
-					\addplot[] coordinates{(-3,-1)} node[label=0:{$-2$}]{};
-					\addplot[] coordinates{(-1,-6)} node[label=0:{$-6$}]{};
-					\legend{$y=x^2 -x -6$}
-				\end{axis}
-			\end{tikzpicture}
-		\end{center}
-
-
-	\item \begin{gather}
-			x^2 + 7x + 12 = 0 \Rightarrow (x + 4)(x + 3)=0 \\
-			\therefore \\
-			x = -4,-3
-		\end{gather}
-		\begin{center}
-			\begin{tikzpicture}
-				\begin{axis}[
-					xmin=-5,xmax=1,
-					ymin=-1,ymax=15,
-					ytick=\empty,xtick=\empty,
-					axis lines=middle
-				]
-					\addplot[samples=100,domain=-5:5] {(x + 4) * (x + 3)};
-					\addplot[only marks,mark=o] coordinates{(-4,0) (-3,0) (0,12)};
-					\legend{$y=x^2 + 7x + 12$}
-					\addplot[] coordinates{(-4,1)} node[label=0:{$3$}]{};
-					\addplot[] coordinates{(-3,-0.5)} node[label=0:{$-2$}]{};
-					\addplot[] coordinates{(-1,12)} node[label=0:{$12$}]{};
-				\end{axis}
-			\end{tikzpicture}
-		\end{center}
-\end{enumerate}
-
-\subsubsection*{Quadratic Formula}
+\subsection{Quadratic Formula}
 The quadratic formula is used to find the solution to arbitrary quadratics in the form $ax^2 + bx + c$. It is as follows:
 
 \begin{equation}
 	\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
+
+\subsubsection{Deriving the Quadratic fromula}
+The quadratic fromula is derived from completing the square. Completing the square is the first step
+\begin{gather*}
+	ax^2 + bx + c = 0\\
+	a \left (x + \frac{b}{2a} \right )^2 - a\left (\frac{b}{2a} \right )^2 + c = 0 \\
+	a \left (x + \frac{b}{2a} \right )^2 - \frac{b^2}{4a} + c = 0 \\
+	a \left (x + \frac{b}{2a} \right )^2 = \frac{b^2}{4a} - c \\
+	\left (x + \frac{b}{2a} \right )^2 = \frac{b^2}{4a^2} - \frac{c}{a} \\
+	\left (x + \frac{b}{2a} \right )^2 = \frac{b^2 - 4ac}{4a^2} \\
+	x + \frac{b}{2a} = \pm \sqrt{\frac{b^2 - 4ac}{4a^2}} \\
+	x + \frac{b}{2a} = \frac{\pm \sqrt{b^2 - 4ac}}{2a} \\
+	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+\end{gather*}
+
+\subsubsection{Discriminant}
+The discriminant is part of the quadratic formula that can tell us various properties of the parabola.
 The discriminant is as follows:
 \begin{equation}
 	D = b^2 - 4ac
@@ -142,39 +74,159 @@ When the discriminant is negative we have no real solutions:
 \end{equation}
 Instead we have complex solutions in the form $ai$ where $i = \sqrt{-1}$.
 
-\section{2020-09-10 Surds}
+\section{Trig}
 
-\begin{enumerate}
-	\item Show that $\frac{\sqrt{75} - \sqrt{27}}{\sqrt{3}}$ can be written as a single integer
-		\begin{equation}
-			\sqrt{9 \times 25} - \sqrt{9 \times 9} = 3 \times 5 - 3 \times 3 = 6
-		\end{equation}
-	\item
-		\begin{equation}
-			\sqrt{98} = \sqrt{49 \times 2} = 7\sqrt{2}
-		\end{equation}
-	\item
-		\begin{equation}
-			\sqrt{200} = \sqrt{2 \times 100} = 10\sqrt{2}
-		\end{equation}
+\begin{equation}
+	\sec \theta \equiv \frac{1}{\sin \theta}
+\end{equation}
 
-	\item
-		\begin{equation}
-			\sqrt{72} = \sqrt{36 \times 2} = 6\sqrt{2}
-		\end{equation}
-\end{enumerate}
 
-\subsection{Rationalising the Denominator}
+\begin{equation}
+	\mathrm{cosec} \theta \equiv \frac{1}{\cos \theta}
+\end{equation}
+
+\begin{equation}
+	\cot \theta \equiv \frac{1}{\tan \theta}
+\end{equation}
+
+\begin{equation}
+	\sin^2 \theta  + \cos^2 \theta \equiv 1
+\end{equation}
+
+\begin{equation}
+	\tan^2 \theta + 1 \equiv \sec^2 \theta
+\end{equation}
+
+\begin{equation}
+	1 + \cot^2 \theta \equiv \mathrm{cosec}^2 x
+\end{equation}
+
+\section{Calculus}
+
+Differentiation, finding a function for the gradient.
 
 \begin{gather*}
-	\frac{1}{\sqrt{3}} \times \overbrace{\frac{\sqrt{3}}{\sqrt{3}}}^{\equiv 1} = \frac{\sqrt{3}}{3}\\
-	\\
-	\frac{3}{3 - \sqrt{2}} \times \overbrace{\frac{3 + \sqrt{2}}{3 + \sqrt{2}}}^{\equiv 1} = \frac{9 + 3\sqrt{2}}{7}\\
-	\\
-	\frac{3 + \sqrt{a}}{2 - \sqrt{a}} \times \overbrace{\frac{2 + \sqrt{a}}{2 + \sqrt{a}}}^{\equiv 1} = \frac{6 - \sqrt{a} - a}{4 - a}\\
-	\\
+	f(x)\\
+	m = \frac{y - y_1}{x - x_1}\\
+	h = x - x_1 \\
+	\text{We want to make $h$ as small as possible so we say that: }\\
+	h \to 0 \\
+	y = f(x + h) \\
+	y_1 = f(x) \\
+	f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
 \end{gather*}
 
+\begin{gather*}
+	f(x) = x^2 \\
+	f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
+	f'(x) = \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} \\
+	f'(x) = \lim_{h \to 0} \frac{x^2 + 2hx + h^2 - x^2}{h} \\
+	f'(x) = \lim_{h \to 0} \frac{2hx + h^2}{h} \\
+	f'(x) = \lim_{h \to 0} 2x + h \\
+	f'(x) = 2x \\
+\end{gather*}
+Integration, finding a function for the area under a curve.
+This is the opposite of differentiation so we can reverse it.
+
+
+\section{Matrices}
+
+\begin{gather*}
+	\begin{pmatrix}
+		a & b \\
+		c & d \\
+	\end{pmatrix} \cdot \begin{pmatrix}
+		e & f \\
+		g & h \\
+	\end{pmatrix} = \begin{pmatrix}
+		a \times e + b \times g & a \times f + b \times h \\
+		c \times e + d \times g & c \times f + d \times h \\
+	\end{pmatrix}
+\end{gather*}
+
+\begin{gather*}
+	m = \begin{pmatrix}
+		a & b \\
+		c & d \\
+	\end{pmatrix}\\
+	m \cdot m^{-1} = \begin{pmatrix}
+		1 & 0 \\
+		0 & 1 \\
+	\end{pmatrix}\\
+	m^{-1} = \begin{pmatrix}
+		10 & 1 \\
+		1 & 10 \\
+	\end{pmatrix}
+\end{gather*}
+
+
+\section{Binomial Expansion}
+
+To exapand a binomial in the form $(a + b)^n$, we can use pascals triangle to work out the coeficients and exapnd from there.
+For example:
+\begin{gather*}
+	(a + b)^3 \\
+	\text{We use the 4th layer of the pascal triangle $1, 4, 4, 1$} \\
+	a^3 + 4a^2b + 4ab^2 + b^3 \\
+\end{gather*}
+To write a more general formula for this we need to remind ourselves of factorials:
+\begin{equation}
+	n! = n \times (n - 1) \times (n - 2) \times \cdots \times 1
+\end{equation}
+This tells us combinations for ordering things. E.g, if given $4$ books they can be put in $4!$ different
+orders. We might want to choose a set of $r$ values from a set of $n$ numbers. The function that gives us the number of
+combinations for this is as follows.
+\begin{equation}
+	\binom{n}{r} = \prescript{n}{}{\mathbf{C}_r} = \frac{n!}{(n - r)!r!}
+\end{equation}
+Using this we can define an expression for arbitrary binomial expansion as follows:
+\begin{equation}
+	(a + b)^n = a^n + \binom{n}{1}a^{n - 1}b + \binom{n}{2}a^{n - 2}b^{2} + \cdots + \binom{n}{r}a^{n - r}b^{r} + \cdots + b^n
+\end{equation}
+We can also define an expression for the term at index $r$ in a binomial expansion:
+\begin{equation}
+	\binom{n}{r}a^{n - r}b^{r}
+\end{equation}
+
+\section{Linear Graphs}
+Linear graphs are graphs in the form $y = mx + c$ and produce a straight line.
+
+\subsection{Paralel and Perpendicular}
+Two linear graphs are parallel if their gradients are equal.
+\begin{equation}
+	m_1 = m_2
+\end{equation}
+Two linear graphs are perpendicular if their gradents are negative recipricles of eachother. We can express this rule as the following
+
+\begin{equation}
+	m_1 \times m_2 = -1
+\end{equation}
+This works because the any number multiplied by it's reciprical is always $1$
+
+\begin{equation}
+	a \times a^{-1} = 1
+\end{equation}
+
+\subsection{Suplimentry rules}
+
+\subsubsection{Calculating the Gradient}
+
+\begin{equation}
+	m = \frac{y - y_1}{x - x_1}
+\end{equation}
+
+\subsubsection{Calculating Y Offset}
+\begin{gather*}
+	c = y - mx\\
+	\therefore\\
+	c = y - \frac{y - y_1}{x - x_1}x
+\end{gather*}
+\subsubsection{Expanded Form}
+TODO: I have this in my notes somewhere; needs finishing
+\begin{equation}
+	y = \frac{y - y_1}{x - x_1}x + \left (y - \frac{y - y_1}{x - x_1}x \right )
+\end{equation}
+
+
+
 \enddocument
-
-

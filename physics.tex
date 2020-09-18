@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+% or 
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\pgfplotsset{compat = newest}
+\usepackage{cancel}
+\usepackage[margin=1in]{geometry}
+\usepackage{siunitx}
+
+\begin{document}
+
+\section{Base Units}
+There are 7 base si base units and they are as follows:
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | }
+    \hline
+    Name & Unit Name & Unit \\ \hline
+    Time & Seconds & \si{s} \\ \hline
+    Mass & Kilogram & \si{kg} \\ \hline
+    Current & Ampere & \si{A} \\ \hline
+    Temperature & Kelvin & \si{K} \\ \hline
+    Amount of substance & Mole & \si{mol} \\ \hline
+    Luminosity & Candela & \si{cd} \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Derived Units}
+From the si base units, one can derive other units such as \si{ms^{-1}}.
+We can show this with the following:
+\begin{gather*}
+	s = \frac{d}{t} \\
+	s = \frac{\si{m}}{\si{s}} \\
+	s = \si{ms^{-1}}
+\end{gather*}
+Another more complex example: 
+\begin{gather*}
+	E_k = \frac{1}{2}mv^2 \\
+	E_k = \frac{1}{2}\si{kg} \left (\si{ms^{-1}} \right )^2 \\
+	E_k = \frac{1}{2}\si{kgm^{2}s^{-2}} \\
+	\text{We remove the constant as it adds nothing to the unit} \\
+	E_k = \si{kgm^{2}s^{-2}} \\
+\end{gather*}
+
+\section{Uncertanty}
+
+\subsection{Measuring devices}
+The typical uncertanty of a mesuring implement such as a ruler is half a division. So, for a typical ruler it would be $0.5\si{mm}$.
+However, often a ruler needs to be alighned at two ends. this means that the actual uncertatny would be $1\si{mm}$.
+
+\subsection{Combining Uncertanty}
+When multiplying two values with a percentage uncertanty that uncertanty is summed together.
+
+\subsection{Practicle: Measuring Density with Uncertanty}
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | }
+    \hline
+    Mass & Mass Uncertanty & Unit \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\section{Archimedes' Priciple}
+Upthrust in fluid is equal to that of the fluid displaced.
+
+\subsection{Practicle}
+
+\end{document}
