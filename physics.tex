@@ -18,7 +18,7 @@
 \begin{document}
 
 \section{Base Units}
-There are 7 base si base units and they are as follows:
+There are 7 base SI base units and they are as follows:
 
 \begin{center}
   \begin{tabular}{ | c | c | c | }
@@ -49,6 +49,7 @@ Another more complex example:
 	E_k = \frac{1}{2}\si{kgm^{2}s^{-2}} \\
 	\text{We remove the constant as it adds nothing to the unit} \\
 	E_k = \si{kgm^{2}s^{-2}} \\
+	J = \si{kgm^{2}s^{-2}} \\
 \end{gather*}
 
 \section{Uncertanty}
@@ -57,15 +58,26 @@ Another more complex example:
 The typical uncertanty of a mesuring implement such as a ruler is half a division. So, for a typical ruler it would be $0.5\si{mm}$.
 However, often a ruler needs to be alighned at two ends. this means that the actual uncertatny would be $1\si{mm}$.
 
+\subsection{Calculationg Uncertanty}
+Uncertanty is calculated using the following:
+\begin{equation}
+	\text{uncertanty} = \frac{\text{error}}{\text{value}}
+\end{equation}
+
 \subsection{Combining Uncertanty}
 When multiplying two values with a percentage uncertanty that uncertanty is summed together.
 
 \subsection{Practicle: Measuring Density with Uncertanty}
 
 \begin{center}
-  \begin{tabular}{ | c | c | c | }
+  \begin{tabular}{ | c | l | c | }
     \hline
-    Mass & Mass Uncertanty & Unit \\
+    Mass & Volume & Density \\
+	\hline	
+    $550.2\si{g} \pm 0.05\si{g} (\pm 0.00908\%)$ & $(49 \pm 1\si{mm}(\pm 5\%))$ & $11200 \pm 101\si{kgm^{-3}}(\pm 9.05 \%)$ \\
+	& $\times (20 \pm 1 \si{mm}(\pm 2.04\%))$ & \\
+	& $\times (50 \pm 1 \si{mm}(\pm 2 \%))$ & \\
+	& $ = 49 \pm 4.42 \si{cm^3}(\pm 9.04 \%)$ & \\
     \hline
   \end{tabular}
 \end{center}
@@ -73,6 +85,6 @@ When multiplying two values with a percentage uncertanty that uncertanty is summ
 \section{Archimedes' Priciple}
 Upthrust in fluid is equal to that of the fluid displaced.
 
-\subsection{Practicle}
+\subsection{Application}
 
 \end{document}
