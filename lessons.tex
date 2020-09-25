@@ -212,21 +212,41 @@ This works because the any number multiplied by it's reciprical is always $1$
 \subsubsection{Calculating the Gradient}
 
 \begin{equation}
-	m = \frac{y - y_1}{x - x_1}
+	m = \frac{y_1 - y_2}{x_1 - x_2}
 \end{equation}
 
-\subsubsection{Calculating Y Offset}
-\begin{gather*}
-	c = y - mx\\
-	\therefore\\
-	c = y - \frac{y - y_1}{x - x_1}x
-\end{gather*}
-\subsubsection{Expanded Form}
-TODO: I have this in my notes somewhere; needs finishing
+\subsubsection{Easier Offset}
+
 \begin{equation}
-	y = \frac{y - y_1}{x - x_1}x + \left (y - \frac{y - y_1}{x - x_1}x \right )
+	y - y_1 = m(x - x_1)
 \end{equation}
 
+\subsubsection{Complete Form}
 
+\begin{equation}
+	y - y_1 = \frac{y_1 - y_2}{x_1 - x_2}(x - x_1)
+\end{equation}
+From there we can substitute in values for $x_1$, $x_2$, $y_1$ and $y_2$ and rearrange into the required form
+(typically $y=mx+c$ or $ax + by + c = 0$).
+
+\section{Circles}
+
+\subsection{Circle Theorems}
+
+\begin{center}
+
+	\begin{tikzpicture}
+		\coordinate [label={below right:$C$}] (C) at (0, 0);
+		\fill [black] (C) circle (0.075);
+		\draw (C) circle [radius=3]; 
+		\draw (-3,-3) -- (3,3);
+		\fill [black] (1.5,1.5) circle (0.075);
+		\fill [black] (0,3) circle (0.075);
+		\fill [black] (3,0) circle (0.075);
+		\draw (0,3) -- (3,0);
+
+	\end{tikzpicture}
+
+\end{center}
 
 \enddocument

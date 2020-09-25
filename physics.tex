@@ -14,6 +14,9 @@
 \usepackage{cancel}
 \usepackage[margin=1in]{geometry}
 \usepackage{siunitx}
+\usetikzlibrary{snakes}
+\usepackage{pgflibrarysnakes}
+\usetikzlibrary{decorations}
 
 \begin{document}
 
@@ -52,6 +55,8 @@ Another more complex example:
 	J = \si{kgm^{2}s^{-2}} \\
 \end{gather*}
 
+\break
+
 \section{Uncertanty}
 
 \subsection{Measuring devices}
@@ -66,11 +71,18 @@ Uncertanty is calculated using the following:
 
 \subsection{Combining Uncertanty}
 When multiplying two values with a percentage uncertanty that uncertanty is summed together.
-
+For example, if given a cube with dimensions $50 \pm 1\si{mm}$, we can calculate the uncertanty of the volume
+as follows:
+\begin{gather*}
+	\text{Start by calculating percentage uncertanty for a single side}\\
+	\frac{1}{50} = 2 \% \\
+	\text{Then multiply the uncertanty by $3$ because we are doing $\left (50 \pm 1 \si{mm} \right )^3$} \\
+	2\% \times 3 = 6 \% \\
+\end{gather*}
 \subsection{Practicle: Measuring Density with Uncertanty}
 
 \begin{center}
-  \begin{tabular}{ | c | l | c | }
+  \begin{tabular}{ | c | c | c | }
     \hline
     Mass & Volume & Density \\
 	\hline	
@@ -82,9 +94,48 @@ When multiplying two values with a percentage uncertanty that uncertanty is summ
   \end{tabular}
 \end{center}
 
+\break
+
 \section{Archimedes' Priciple}
 Upthrust in fluid is equal to that of the fluid displaced.
 
 \subsection{Application}
+Archimedes principle can be used to predict the resultant force of an object partially or fully submerged in a liquid.
+
+\subsubsection{Example}
+Given a granite cube with dimensions of length $3\si{cm}$ submerged in \textbf{water} suspended from a newton meter, predict the value on
+the newton meter.
+
+\begin{center}
+	\begin{tikzpicture}
+	\draw (-1,-1) rectangle (1,1);
+	\draw (-0.5,2) rectangle (0.5,4);
+	\draw (-2,2) -- (-2,-2) -- (2,-2) -- (2,2);
+	\draw[snake=coil,segment aspect=0, line around snake=0, segment length=15.15] (-2,1.5) -- (2,1.5);
+	\draw[] (0,2) -- (0,1);
+	\node[] (n) at (0,3) {\si{N}};
+	\node[] (m) at (0,0) {\small Granite};
+	\node[label={[label distance=0.1]below:$3\si{cm}$}] (w) at (0,-1.1) {};
+	\draw[snake=brace] (1,-1.1) -- (-1,-1.1);
+	\draw[snake=brace] (1.1,1) -- (1.1,-1);
+	\node[label={[label distance=0.1]right:$3\si{cm}$}] (w) at (1.1,0) {};
+	\end{tikzpicture}
+\end{cnter}
+
+\begin{gather*}
+	\text{Calculate the volume of the cube in \si{m^3}} \\
+	0.03^3 = 0.000027 \si{m^3} \\
+	\text{Calculate the mass of granite} \\
+	0.000027 \si{m^3} \times \overbrace{2750\si{kgm^i{-3}}}^{\text{Density}} = 0.07425\si{kg} \\
+	\text{Calculate the weight of granite} \\
+	0.07425\si{kg} \times \overbrace{9.81\si{ms^{-2}}}^{\text{Feild Strength}} = 0.7839\si{N} \\
+	\text{Volume of water displaced is the same as the volume of the cube because it is submerged}\\
+	\text{Calculate the mass of water} \\
+	0.000027\si{m^3} \times \overbrace{1000\si{kgm^{-3}}}^{\text{Density}} = 0.027\si{kg} \\
+	\text{Calculate the upthrust} \\
+	0.027\si{kg} \times \overbrace{9.81\si{ms^{-2}}}^{\text{Feild Strength}} = 0.26482\si{N} \\
+	\text{Calculate the resultant force} \\
+	0.72839 \si{N} - 0.26487 \si{N} = 0.464 \si{N} \\
+\end{gather*}
 
 \end{document}
