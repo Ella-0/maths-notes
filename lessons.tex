@@ -74,6 +74,16 @@ When the discriminant is negative we have no real solutions:
 \end{equation}
 Instead we have complex solutions in the form $ai$ where $i = \sqrt{-1}$.
 
+\subsection{Solving Hidden Quadratics by Substitution}
+
+Given a quadratic such as $2^{2n} + 2 \left ( 4^{n} \right ) + 1$ we can solve by putting in the form
+$ax^2 + bx + c$.
+
+\begin{gather}
+	2^{2n} + 2 \left ( 2^{n} \right ) + 1 = 0 \\
+	\left ( 2^n \right ) ^2 + 2 \left (2^n \right ) + 1 = 0 \\
+\end{gather}
+
 \section{Trig}
 
 \begin{equation}
@@ -128,6 +138,45 @@ Differentiation, finding a function for the gradient.
 Integration, finding a function for the area under a curve.
 This is the opposite of differentiation so we can reverse it.
 
+\subsection{Sum rule}
+
+\begin{equation}
+	(f + g)' = f' + g'
+\end{equation}
+
+\subsection{Product Rule}
+
+\begin{equation}
+	(fg)' = fg' + f'g
+\end{equation}
+
+\subsection{Chain Rule}
+
+\begin{gather}
+	h(x) = f(g(x))\\
+	h'(x) = f'(g(x)) \cdot g'(x) 
+\end{gather}
+
+\subsection{Second derivative}
+
+The second derivative finds the gradient of the gradient function. The notations $f''(x)$ and $\frac{d^2x}{dy^2}$ are commonly used.
+
+\subsubsection{Deriving the notation}
+
+\begin{gather}
+	\frac{dy}{dx} \\
+	\frac{d}{dx} \left ( \frac{dy}{dx} \right )\\
+	\frac{d(dy)}{dx^2} \\
+	\frac{d^2y}{dx^2} \\
+\end{gather}
+
+\subsubsection{Stationary Points}
+
+\begin{align*}
+	\text{Inflection:} &\left \{ f''(x) = 0 \right \} \\
+	\text{Maximum:} &\left \{ f''(x) < 0 \right \} \\
+	\text{Minimum:} &\left \{ f''(x) > 0 \right \} \\
+\end{align*}
 
 \section{Matrices}
 
@@ -248,5 +297,96 @@ From there we can substitute in values for $x_1$, $x_2$, $y_1$ and $y_2$ and rea
 	\end{tikzpicture}
 
 \end{center}
+
+\section{asymptotes}
+Asymptotes are imaginary lines that graphs will extend to but never touch. A good example of this is with the graph $y=x^{-1}$
+which has two asymptotes. One on the x axis ($y = 0$) and one on the y axis ($x = 0$)
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle
+		]
+			\addplot[samples=100,domain=-10:10] {x^(-1)};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\section{Exponentials and Logarythms}
+
+\subsection{Laws of Logarythms}
+
+\begin{gather}
+	\log_{a}{x^y} = y\\
+	\log_{a}{x} + \log_{a}{y} = \log_{a}{xy} \\
+	\log_{a}{x} - \log_{a}{y} = \log_{a}{\frac{x}{y}} \\
+	y\log_{a}{x} = \log_{a}{x^y}
+\end{gather}
+
+\subsubsection{Special Cases}
+
+\begin{gather}
+	\log_{a}{\frac{1}{x}} = \log_{a}{x^{-1}} = -\log_{a}{x} \\
+	\log_{a}{a} = 1 \left \{a > 0, a \ne 1 \right \}\\
+	\log_{a}{1} = 0 \left \{a > 0, a \ne 1 \right \}\\
+\end{gather}
+
+\subsection{Natural log}
+
+\begin{gather}
+	\ln{x} = \log_e{x}
+\end{gather}
+
+\subsection{Graphs}
+
+Both $ln x$ and $e^x$ have one asymptote. In the case of $ln x$ it is the y axis ($x = 0$) and for $e^x$ it is the x axis ($y = 0$).
+The graphs have been plotted below:
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle,
+			tick style={draw=none},
+			xticklabels={,,},
+			yticklabels={,,}
+		]
+			\addplot[samples=100, domain=-10:3] {exp(x))};
+			\addplot[samples=100, domain=0:10] {ln(x))};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\section{Tangents and Normals}
+Normals are lines perpendicular to a surface where as tangents are lines
+that touch the surface at a single point with the same gradient.
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle
+		]
+			\addplot[samples=100,domain=-10:10] {x^2};
+			\addplot[samples=100,domain=-10:10] {2 * 1 * x - 1^2};
+			\addplot[samples=100,domain=-10:10] {1 - ((x - 1) / (2 * 1))};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+The gradients of the tangents and normals have the following relationship
+\begin{equation}
+	m_n = - m_t^{-1}
+\end{equation}
+\\
+Arbitrary tangent and normal functions ($f_t(x, a)$ and $f_n(x, a)$) of a given function $f(x)$ at a given offset $a$ can be given as follows:
+
+\begin{gather}
+	f_t(x, a) = f'(x)(x-a) + a^2 \\
+	f_n(x, a) = a^2 -f'(x)^{-1}(x-a) \\
+\end{gather}
 
 \enddocument
