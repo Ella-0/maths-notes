@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+% or 
+\usepackage{amssymb}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\pgfplotsset{compat = newest}
+\usepackage{cancel}
+\usepackage[margin=1in]{geometry}
+\usepackage{siunitx}
+\usetikzlibrary{snakes}
+\usepackage{pgflibrarysnakes}
+\usetikzlibrary{decorations}
+
+\begin{document}
+
+\section{Signed and Unsigned}
+
+There are three main ways of representing signed integers in binary
+
+\begin{itemize}
+	\item{
+		\textbf{Sign and Magnitude} --- To represent a negative number in this form we simply take
+		the positive number and change the most significant bit to a $1$. For eample $2_{10}$ is $0010_2$ so
+		$-2_{10}$ is $1010_2$.
+	}
+	\item{
+		\textbf{1's Compliment} --- To represent a negative number in this form we simply take the positive number
+		and invert all of the bits. For example $2_{10}$ is $0010_2$ so $-2_{10}$ is $1101_2$.
+	}
+	\item{
+		\textbf{2's Compliment} --- To represent a negative number in this form we simply take the 1's compliment form and add $1$.
+		For example $2_{10}$ is $0010_2$, so the 1's compliment form of $-2_{10}$ (invert all the bits) is $1101_2$. This means
+		the 2's compliment form is $1110_2$ ($1101_2 + 0001_2$).
+	}
+\end{itemize}
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | }
+    \hline
+    Decimal & Sign + Mag & 1's Compliment & 2's compliment \\ \hline
+    $-2_{10}$ & $1010_2$ & $1101_2$ & $1110_2$\\ \hline
+    $-1_{10}$ & $1001_2$ & $1110_2$ & $1111_2$\\ \hline
+    $0_{10}$ & $1000_2$ or $0000_2$ &  $1111_2$ or $0000_2$ & $0000_2$\\ \hline
+    $1_{10}$ & $0001_2$ & $0001_2$ & $0001_2$\\ \hline
+    $2_{10}$ & $0010_2$ & $0010_2$ & $0010_2$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{Sign and Magnitude Properties}
+The sign and magnitude notation is by far the simplest of the notations.
+It retains the property of the least significant bit telling us it's
+parity, and it has the property of the largest significant bit telling us
+the sign. It is the easiest for us humans to convert to. However this has the side
+affect of allowing two ways of encoding $0$ ($+0$, $-0$) and adding them is non trivial.
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | }
+    \hline
+    Decimal & $\pm$ & $4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $-2_{10}$ & $1$ & $0$ & $1$ & $0$\\ \hline
+    $-1_{10}$ & $1$ & $0$ & $0$ & $1$\\ \hline
+    $-0_{10}$ & $1$ & $0$ & $0$ & $0$\\ \hline
+    $0_{10}$ & $0$ & $0$ & $0$ & $0$ \\ \hline
+    $1_{10}$ & $0$ & $0$ & $0$ & $1$\\ \hline
+    $2_{10}$ & $0$ & $0$ & $1$ & $0$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsection{1's Compliment Properties}
+Like the sign and magnitude notation, 1's compliment retains the property of
+the most significant bit being the sign however it doesn't retain the property of 
+the least significant bit denoting the parity. There are still two notations of 
+$0$ with 1's compliment though it is much simpler for us to add up.
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | }
+    \hline
+    Decimal & $-7_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $-2_{10}$ & $1$ & $1$ & $0$ & $1$\\ \hline
+    $-1_{10}$ & $1$ & $1$ & $1$ & $0$\\ \hline
+    $-0_{10}$ & $1$ &  $1$ & $1$ & $1$\\ \hline
+    $0_{10}$ & $0$ &  $0$ & $0$ & $0$\\ \hline
+    $1_{10}$ & $0$ & $0$ & $0$ & $1$\\ \hline
+    $2_{10}$ & $0$ & $0$ & $1$ & $0$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\break
+
+\subsubsection{Adding}
+When adding a 1's compliment binary number we start by adding normally. Then, at the end,
+we add the carry bit from the $-7_{10}$ column to the beggining.
+
+\begin{center}
+  \begin{tabular}{c | c | c | c | c }
+    Decimal & $-7_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $3_{10}$ & $0$ & $0$ & $1$ & $1$\\
+    $-1_{10}$ & $1$ & $1$ & $1$ & $0$\\ \hline
+    & $0$ &  $0$ & $0$ & $1$\\
+	& $1$ & $1$ &\\ \hline
+	Add cary bit & & & &  $1$ \\
+	$2_{10}$ & $0$ & $0$ & $1$ & $0$ \\ \hline
+	& & & $1$ &\\
+  \end{tabular}
+\end{center}
+
+\subsection{2's Compliment Properties}
+With twos compliment we retain both the properties of the least significant bit telling us the parity
+and the most significant bit telling us the sign. There are no longer two notations of $0$ and 
+we can use a standard, unsigned adder to get the sum of two 2's compliment binary numbers.
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | }
+    \hline
+    Decimal & $-8_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $-2_{10}$ & $1$ & $1$ & $1$ & $0$\\ \hline
+    $-1_{10}$ & $1$ & $1$ & $1$ & $1$\\ \hline
+    $0_{10}$ & $0$ &  $0$ & $0$ & $0$\\ \hline
+    $1_{10}$ & $0$ & $0$ & $0$ & $1$\\ \hline
+    $2_{10}$ & $0$ & $0$ & $1$ & $0$ \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\subsubsection{Adding}
+When adding a 2's compliment binary number we just add the number normally as shown bellow:
+
+\begin{center}
+  \begin{tabular}{c | c | c | c | c }
+    Decimal & $-7_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $3_{10}$ & $0$ & $0$ & $1$ & $1$\\
+    $-1_{10}$ & $1$ & $1$ & $1$ & $1$\\ \hline
+    $2_{10}$& $0$ &  $0$ & $1$ & $0$\\
+	& $1$ & $1$ & $1$\\
+  \end{tabular}
+\end{center}
+\end{document}

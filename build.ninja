@@ -5,3 +5,4 @@ build build/prep.pdf: tex prep.tex
 build build/heg-prep.pdf: tex heg-prep.tex
 build bulid/lessons.pdf: tex lessons.tex
 build bulid/physics.pdf: tex physics.tex
+build bulid/compsci.pdf: tex compsci.tex
