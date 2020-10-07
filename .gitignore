@@ -4,3 +4,4 @@
 *.fls
 build
 .ninja*
+*.sh
