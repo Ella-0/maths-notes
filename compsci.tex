@@ -18,6 +18,13 @@
 \usepackage{pgflibrarysnakes}
 \usetikzlibrary{decorations}
 
+\usetikzlibrary{arrows,automata,positioning}
+
+\usepackage{listings}
+\usepackage{color}
+
+\lstset{language=c}
+
 \begin{document}
 
 \section{Signed and Unsigned}
@@ -47,7 +54,8 @@ There are three main ways of representing signed integers in binary
     Decimal & Sign + Mag & 1's Compliment & 2's compliment \\ \hline
     $-2_{10}$ & $1010_2$ & $1101_2$ & $1110_2$\\ \hline
     $-1_{10}$ & $1001_2$ & $1110_2$ & $1111_2$\\ \hline
-    $0_{10}$ & $1000_2$ or $0000_2$ &  $1111_2$ or $0000_2$ & $0000_2$\\ \hline
+    $-0_{10}$ & $1000_2$ & $1111_2$ & N/A\\ \hline
+    $0_{10}$ & $0000_2$ & $0000_2$ & $0000_2$\\ \hline
     $1_{10}$ & $0001_2$ & $0001_2$ & $0001_2$\\ \hline
     $2_{10}$ & $0010_2$ & $0010_2$ & $0010_2$ \\
     \hline
@@ -108,7 +116,7 @@ we add the carry bit from the $-7_{10}$ column to the beggining.
     $-1_{10}$ & $1$ & $1$ & $1$ & $0$\\ \hline
     & $0$ &  $0$ & $0$ & $1$\\
 	& $1$ & $1$ &\\ \hline
-	Add cary bit & & & &  $1$ \\
+	Add carry bit & & & &  $1$ \\
 	$2_{10}$ & $0$ & $0$ & $1$ & $0$ \\ \hline
 	& & & $1$ &\\
   \end{tabular}
@@ -144,4 +152,116 @@ When adding a 2's compliment binary number we just add the number normally as sh
 	& $1$ & $1$ & $1$\\
   \end{tabular}
 \end{center}
+
+\section{Multiplication}
+When multiplying 2 binary numbers we multiply the first number by hte digits of the second number
+individually bit shifting to the left by $1$ every time. We then take the sum of these numbers to
+get our answer.
+
+\begin{center}
+  \begin{tabular}{c | c | c | c | c | c}
+    Decimal & $8_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$i & shift\\ \hline
+    $3_{10}$ & $0$ & $0$ & $1$ & $1$ & \\
+    $5_{10}$ & $0$ & $1$ & $0$ & $1$ &\\ \hline
+    $3_{10}$& $0$ &  $0$ & $1$ & $1$ & 0\\
+    $0_{10}$& $0$ &  $0$ & $0$ & $0$ & 1\\
+    $12_{10}$& $1$ &  $1$ & $0$ & $0$& 2\\
+    $0_{10}$& $0$ &  $0$ & $0$ & $0$& 3\\ \hline
+    $15_{10}$& $1$ &  $1$ & $1$ & $1$\\
+  \end{tabular}
+\end{center}
+
+\section{Structured Programming}
+
+\subsection{Unstructured}
+When writing an unstructured program it is common to use \lstinline{break} and \lstinline{goto} to jump around to abitrary
+blocks of code as. The bellow listing makes use of the \lstinline{goto} statement to endlessly print "Hello, World!"
+
+\begin{lstlisting}
+
+int main() {
+loop:
+	printf("Hello, World!\n");
+	goto loop;
+}
+
+
+\end{lstlisting}
+
+\subsection{Structured}
+In structured programming, the flow of our program can be represented in a strict heiarchey. We shouldn't use \lstinline{break} or
+\lstinline{goto} to jump around our program, instead we make use of \lstinline{if} and \lstinline{while} statements to provide
+selection and iteration instead of conditionally jumping. We also use subrountines instead of blocks to split up our program.
+The previous listing has been rewritten as a structured program.
+
+\begin{lstlisting}
+int main() {
+	while (true) {
+		printf("Hello, World!\n");
+	}
+}
+\end{lstlisting}
+Compilers of structured programming languages internally map structured programming patterns to unstructured programming patterns.
+This is because CPU architectures tend not to deal with the complexity that having to process structured machine code
+would bring. 
+\\
+Assembly and intermediate languages such as AT\&T assembly and LLVM IR do not support structured programming, they require
+loops and conditions to be unrolled into conditional breaks.
+
+\subsection{Advantages}
+Structured programming makes code much easier to read and debug, thus reducing time developers spend on a problem.
+
+\subsection{Disadvantages}
+Structured programming removes some opportunity for cleaver code, thus structured programs tend to be slower than
+unstructured programs. However, modern compilers make this difference negligible thanks to advanced optimisation 
+techniques.
+
+\section{Finite State Machines}
+
+
+\begin{center}
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+
+        \node[state,initial] (s_0) {$s_0$};
+        \node[state,accepting] (s_1) [right of=s_0] {$s_1$};
+        \node[state] (s_2) [right of=s_1] {$s_2$};
+
+        \path[->]
+        (s_0) edge [bend left] node {B}  (s_1)
+        (s_1) edge [loop below] node {R}  ()
+        (s_1) edge [bend left] node {a}  (s_2)
+        (s_2) edge [bend left] node {n}  (s_1);
+
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+
+        \node[state] (s_0) {$s_0$};
+        \node[state] (s_1) [right of=s_0] {$s_1$};
+        \node[state] (s_2) [right of=s_1] {$s_2$};
+
+        \path[->]
+        (s_0) edge [bend left] node {a}  (s_1)
+        (s_1) edge [bend left] node {b}  (s_0)
+        (s_0) edge [loop below] node {b}  ()
+        (s_1) edge [loop below] node {a}  ()
+        (s_1) edge [bend left] node {c}  (s_2);
+
+    \end{tikzpicture}
+
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+
+        \node[state,initial] (s_0) {$s_0$};
+        \node[state,accepting] (s_1) [right of=s_0] {$s_1$};
+        \node[state] (D) [below of=s_0] {$D$};
+
+        \path[->]
+        (s_0) edge [bend left] node {a}  (D)
+        (s_0) edge [bend left] node {A-z}  (s_1)
+        (s_1) edge [loop below] node {0-9}  ()
+        (s_1) edge [loop above] node {A-z}  ();
+
+    \end{tikzpicture}
+\end{center}
+
 \end{document}
