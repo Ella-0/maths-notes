@@ -9,9 +9,14 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: prep.tex
+          root_file: |
+            prep.tex
+            heg-prep.tex
+            compsci.tex
+            lessons.tex
+            physics.tex
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: prep
-          path: prep.pdf
+          name: pdfs
+          path: *.pdf
