@@ -171,6 +171,25 @@ get our answer.
   \end{tabular}
 \end{center}
 
+\section{Representing Reals}
+In computer science there are two main ways of representing real numbers. Fixed point, where a point is placed in the middle of
+a set of bits. And floating point which is equivalent to base $2$ scientific notation.
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | c | c | c |}
+    \hline
+    Decimal & $-8_{10}$ & $4_{10}$ & $2_{10}$ & $1_{10}$ & $0.5_{10}$ & $0.25_{10}$ & $0.125_{10}$ & $0.0625_{10}$\\ \hline
+    $-2.375_{10}$ & $1$ & $1$ & $0$ & $1$ & $0$ & $1$ & $1$ & $0$\\ 
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{gather}
+	-6.5_{10} = 0.8125_{10} \times 2_{10}^{3_{10}} = 01101_2 \times 2_{10}^{011_2} \\
+	\therefore \\
+	-6.5_{10} = {\overbrace{01101}^{\text{Mantissa}}\overbrace{011}^{\text{Exponent}}}_2
+\end{gather}
+
 \section{Structured Programming}
 
 \subsection{Unstructured}
