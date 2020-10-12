@@ -55,6 +55,24 @@ Another more complex example:
 	J = \si{kgm^{2}s^{-2}} \\
 \end{gather*}
 
+\subsection{Prefixes}
+We use prefixes to units to shorten down the format and to make values more human readible. Each prefix
+represents a power of ten ($10^n$). The below table shows the different prefixes:
+\begin{center}
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \textbf{Symbol} & \textbf{Name} & \multicolumn{2}{c|}{\textbf{What it means}} & \multicolumn{2}{c|}{\textbf{How to convert}} \\ \hline
+    \si{T}          & Terra         & $10^{12}$  & $1,000,000,000,000$    & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{G}          & Giga          & $10^{9}$   & $1,000,000,000$        & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{M}          & Mega          & $10^{6}$   & $1,000,000$            & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{k}          & Kilo          & $10^{3}$   & $1,000$                & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+                    &               & $10^{0}$   & $1$                    & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{m}          & Milli         & $10^{-3}$  & $0.001$                & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{\mu}        & Micro         & $10^{-6}$  & $0.000001$             & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{n}          & Nano          & $10^{-9}$  & $0.00000001$           & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \si{p}          & Pico          & $10^{-12}$ & $0.000000000001$       & $\uparrow \div 1000$ & $\downarrow \times 1000$ \\ \hline
+    \end{tabular}
+\end{center}
 \break
 
 \section{Uncertanty}
@@ -93,6 +111,20 @@ as follows:
     \hline
   \end{tabular}
 \end{center}
+
+\section{Experiment Techniques}
+
+\subsection{Accuracy}
+Accuracy is how close a result is to the actual value.
+
+\subsection{precision}
+Precision is how close repeated readings are to eachother.
+
+\subsection{Resolution}
+Resolution is the smallest step a measuring device can measure.
+For example, a meter ruler has a resolution of $1\si{mm}$ and a micrometer has
+a resolution of $0.01\si{mm}$.
+
 
 \break
 
@@ -139,34 +171,11 @@ the newton meter.
 \end{gather*}
 
 \section{Laminar and Turbulant Flow}
-\begin{center}
-	\begin{tikzpicture}
-	\draw[] (-1,1) -- (1,1);
-	\draw[] (-1,0) -- (1,0);
-	\draw[] (-1,-1) -- (1,-1);
-	\end{tikzpicture}
-\end{center}
+\begin{itemize}
+	\item Laminar -- Laminar flow is when
+	\item Turbulant
+\end{itemize}
+We often assume laminar flow for simplicity.
 
-\begin{center}
-	\begin{tikzpicture}
-	\draw[] (-1,1) -- (1,1);
-	\draw[] (-1,0) -- (1,0);
-	\draw[] (-1,-1) -- (1,-1);
-	\end{tikzpicture}
-\end{center}
-We assume laminar for simplicity.
-
-\section{Experiment Techniques}
-
-\subsection{Accuracy}
-Accuracy is how close a result is to the actual value.
-
-\subsection{precision}
-Precision is how close repeated readings are to eachother.
-
-\subsection{Resolution}
-Resolution is the smallest step a measuring device can measure.
-For example, a meter ruler has a resolution of $1\si{mm}$ and a micrometer has
-a resolution of $0.01\si{mm}$.
 
 \end{document}
