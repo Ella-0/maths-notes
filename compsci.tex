@@ -173,7 +173,8 @@ get our answer.
 
 \section{Representing Reals}
 In computer science there are two main ways of representing real numbers. Fixed point, where a point is placed in the middle of
-a set of bits. And floating point which is equivalent to base $2$ scientific notation.
+a set of bits. And floating point which is equivalent to base $2$ scientific notation. Examples of fixed and floating point
+binary numbers are shown below:
 
 \begin{center}
   \begin{tabular}{ | c | c | c | c | c | c | c | c | c |}
@@ -190,7 +191,42 @@ a set of bits. And floating point which is equivalent to base $2$ scientific not
 	-6.5_{10} = {\overbrace{01101}^{\text{Mantissa}}\overbrace{011}^{\text{Exponent}}}_2
 \end{gather}
 
+\subsection{Normmalising Floating Point Numbers}
+Reals can have many floating point representations in binary, normalising is the process of turning one
+repersentation of a real into another with the largest possible mantissa that can repersent that value.
+Below, all of the different possible values for $1_{10}$ in a 5 bit signed mantissa and 3 bit signed exponent
+are shown below:
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | | c | c | c |}
+    \hline
+    Decimal & $-1_{10}$ & $0.5_{10}$ & $0.25_{10}$ & $0.125_{10}$ & $0.0625_{10}$ & $-4_{10}$ & $2_{10}$ & $1_{10}$\\ \hline
+    $1_{10}$ & $0$ & $0$ & $0$ & $1$ & $0$ & $0$ & $1$ & $1$\\ \hline
+    $1_{10}$ & $0$ & $0$ & $1$ & $0$ & $0$ & $0$ & $1$ & $0$\\ \hline
+    $1_{10}$ & $0$ & $1$ & $0$ & $0$ & $0$ & $0$ & $0$ & $1$\\ 
+    \hline
+  \end{tabular}
+\end{center}
+The normalised value for $1_{10}$ is $01000001_2$ as that is the representation where the mantissa has the largest magnitude.
+The normalised value for $-1_{10}$ is $10000000_2$ as that is the representation where the mantissa has the largest magnitude.
+The normalised value for $-2.5_{10}$ is $10110010_2$ as that is the reperesentation where the mantissa has the largest magnitude.
+\\\\
+Negative, normalised floats always start with $10$ whereas positive normalised floats always start with $01$.
+\subsection{Advantages of each}
+\begin{itemize}
+	\item Floating Points can represent both massive (size of the universe) and tiny (size of a photon) numbers
+		in a small number of bits. However floating point numbers have the issue of floating point
+		rounding errors where basic addition and subtraction of floating points can result in a small error in
+		the answer, this means they are not suitible for banking where exact values must be known.
+	\item Fixed point numbers have the advantage of being able to use the samee basic integer arithemetic operations
+		in a processor, this makes them very easy to handle however they can only represent a small range of numbers
+		so, unlike floats, they're not as useful in science but are useful in banking.
+\end{itemize}
+
 \section{Structured Programming}
+
+
+
 
 \subsection{Unstructured}
 When writing an unstructured program it is common to use \lstinline{break} and \lstinline{goto} to jump around to abitrary
@@ -275,7 +311,7 @@ techniques.
         \node[state] (D) [below of=s_0] {$D$};
 
         \path[->]
-        (s_0) edge [bend left] node {a}  (D)
+        (s_0) edge [bend left] node {}  (D)
         (s_0) edge [bend left] node {A-z}  (s_1)
         (s_1) edge [loop below] node {0-9}  ()
         (s_1) edge [loop above] node {A-z}  ();
