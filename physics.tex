@@ -17,7 +17,7 @@
 \usetikzlibrary{snakes}
 \usepackage{pgflibrarysnakes}
 \usetikzlibrary{decorations}
-
+\usetikzlibrary{angles,quotes}
 \begin{document}
 
 \section{Base Units}
@@ -177,5 +177,166 @@ the newton meter.
 \end{itemize}
 We often assume laminar flow for simplicity.
 
+\section{Stokes Law}
+Stokes law states that the drag acting on a sphere in a
+fluid is given by the following where $F_d$ is the drag
+force, $\eta$ is the velocity of the fluid, $r$ is
+the radius of the sphere and $v$ is the velocity of the sphere.
+\begin{equation}
+	F_d = 6\pi\eta rv
+\end{equation}
+
+\section{Vector and Scalar Quantities}
+Vectors are values that hold both a magnitude and a direction whereas scalars only hold a magnitude.
+\\\\
+A non exaustive list of vector and scalar quantities:
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Scalar} & \textbf{Vector} \\ \hline
+		Distance        & Displacement \\
+		Speed           & Velocity \\
+		Mass            & Force \\
+		Energy          & Momentum \\
+        Pressure        & Acceleration \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Resolving Vectors}
+It is often useful for us to resolve vectors where we're given a magnitude and an angle into
+their respective unit parts giving a value as a column vector or as two values, one horrizontal and
+one vertical. We use triganometry to do this.
+\\\\
+The following shows how we can resolve a vector given a magnitude ($m$) and an angle ($\theta$):
+\begin{center}
+	\begin{tikzpicture}
+	\draw (-1,-2) coordinate (a) -- (1,-2) coordinate (b) -- (1,2) coordinate (c) -- cycle;
+
+	\node[label={[label distance=0.1]left:$m$}] (w) at (0,0) {};
+
+	\pic[draw,angle radius=.5cm,angle eccentricity=1.5,"$\theta$"] {angle= b--a--c};
+
+	\node[label={[label distance=0.1]below:$m\cos\theta$}] (w) at (0,-2) {};
+	\node[label={[label distance=0.1]right:$m\sin\theta$}] (w) at (1,0) {};
+
+	\end{tikzpicture}
+\end{center}
+
+\subsection{Free Body Diagrams}
+Free body diagrams are used to represent the forces acting on an object and their various directions,
+they help with visualising problems.
+
+\textbf{TODO}
+
+\subsection{Extra Information}
+For more information on vectors, such as addition, see maths notes.
+
+\break
+
+\section{Kinematics}
+In kinematics we study the motion of bodies disregarding forces acting on it such as
+air resistance.
+
+\subsection{Definitions for Linear Motion}
+
+\begin{center}
+	\begin{tabular}{|l|l|}
+		\hline
+		\textbf{Quantity} & \textbf{Description} \\ \hline
+		Displacement      & The distance traveled in a given direction and is the area under a velocity time graph. \\
+		Instantanious Speed & Speed at any givent point in time; gradient of distance time graph. \\
+		Average Speed & Rate of change of distance traveled. \\
+		Velocity & Speed in a given direction (rate of change of displacement). \\
+        Acceleration & Rate of change of velocity \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\subsection{Distance vs Displacement}
+Distance and displacement are different. Whereas distance is a scalar quantity, displacement is a vector quantity. Where
+distance can represents the amount an object has moved displacement represents the amount an object has moved from a specific
+starting point. This means that displacement can be affectively $0$ when distance is massive.
+
+\subsection{SUVAT}
+Suvat is a tool we can use to help with kinematics problems. 
+\begin{itemize}
+	\item $s$ -- Distance
+	\item $u$ -- Initial Speed
+	\item $v$ -- Final Speed
+	\item $a$ -- Acceleration
+	\item $t$ -- Time Interval	
+\end{itemize}
+We can substitute values next to each of the letters to work out which of the following formulae to use:
+\begin{gather}
+	v = at + u \\
+	s = ut + \frac{1}{2}at^2 \\
+	s = \left ( \frac{v + u}{2} \right )t \\
+	v^2 = u^2 + 2as \\
+	s = vt - \frac{1}{2}at^2 \\
+\end{gather}
+From there we can work out all of the other values in a question.
+
+\subsubsection{Deriving SUVAT Euquations}
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=middle,
+            xtick={0,2},
+        	xticklabels={$0$,$t$},
+			ytick={0,1,2},
+			yticklabels={$0$,$u$,$v$},
+			ymin=0,
+		]
+
+		\addplot[domain=0:4,range=0:4, name path=A] {x/2 + 1};
+		\addplot[domain=0:4,range=0:4,dashed, name path=B] {1};
+		\addplot[domain=0:4,range=0:4,dashed, name path=C] {2};
+		\addplot[mark=none, dashed] coordinates {(2, 0) (2, 3)};
+
+		\end{axis}
+	\end{tikzpicture}
+
+\end{center}
+For the first equation we start by workinng out the gradient of the line.
+And, as we know from previously, the gradient of velocity time graph
+is acceleration.
+
+\begin{gather}
+	\frac{dy}{dx} = \frac{v - u}{t} = a \\
+	a = \frac{v - u}{t} \\
+	at = v - u \\
+	v = u + at
+\end{gather}
+\\
+For the next one we are finding the are under the line which we know
+from earlier, on a velocity time graph, is the distance. We use the
+area of a trapesium for this.
+
+\begin{gather}
+	\left ( \frac{a + b}{2} \right ) h = \left ( \frac{v + u}{2} \right )t \\
+	s = \left ( \frac{v + u}{2} \right )t \\
+\end{gather}
+\\
+For the next equation we can substitute $v$ into our second formula
+\begin{gather}
+	s = \left ( \frac{v + u}{2} \right )t \\
+	s = \left ( \frac{u + at + u}{2} \right )t = \left ( \frac{2u + at}{2} \right )t \\
+	s = \left ( u + \frac{at}{2} \right )t = ut + \frac{1}{2}at^2 \\
+\end{gather}
+\\
+For our next equation we can do the following
+\begin{gather}
+	v = at + u \\
+	t = \frac{v - u}{a} \\
+	s = \left ( \frac{v + u}{2} \right )t \\
+	s = \left ( \frac{v + u}{2} \right )\left (\frac{v - u}{a}\right ) \\
+	s = \frac{v^2 - u^2}{2a} \\
+	2as = v^2 - u^2 \\
+	v^2 = u^2 + 2as \\
+\end{gather}
+\\
+For our final equation be can just rearrange a previous equation.
 
 \end{document}
