@@ -319,4 +319,34 @@ techniques.
     \end{tikzpicture}
 \end{center}
 
+\subsection{Mealy Machines}
+Mealy machines are a form of finite state machine that has an output.
+We write each transition as the condition for that transition and 
+the output as: rule/output
+
+\subsubsection{Example}
+Below is a state machine that outputs a  $1$ if the intput countains
+the substring $111$:
+\begin{center}
+
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+
+        \node[state,initial] (s_0) {$s_0$};
+        \node[state] (s_1) [right of=s_0] {$s_1$};
+        \node[state] (s_2) [below of=s_1] {$s_2$};
+
+        \path[->]
+        (s_0) edge [bend left] node {1/0}  (s_1)
+        (s_0) edge [loop above] node {0/0}  (s_0)
+        (s_1) edge [bend left] node {1/0}  (s_0)
+        (s_1) edge [bend left] node {1/0}  (s_2)
+        (s_2) edge [loop below] node {1/1}  (s_2)
+        (s_2) edge [bend left] node {0/0}  (s_0);
+
+    \end{tikzpicture}
+
+\end{center}
+
+\textbf{TODO: More state machines}
+
 \end{document}
