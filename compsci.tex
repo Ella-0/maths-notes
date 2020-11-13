@@ -347,6 +347,79 @@ the substring $111$:
 
 \end{center}
 
-\textbf{TODO: More state machines}
+\section{Nyquist's Theorum}
+Nyquist's theorum states that the sample rate should be double the maximum frequency. 
+This is why CDs and other music recordings often have a sample rate of $~40\si{kHz}$ because
+the maximum frequencies humans can hear is $~20\si{kHz}$ and $40$ is double $20$.
+
+
+\section{Compression}
+Compression is the process of making a file smaller, this is done by finding patterns in data and sometimes
+removing unneeded data. 
+
+\subsection{Lossy Compression}
+When compressing data with lossy compression some data is lost but the general information in the file stays the same.
+Images and Videos frequently use lossy compression as loosing a bit of data doesn't stop an image or video from becoming
+recognisable.
+
+\subsection{Lossless Compression}
+Lossless compression is used on files that can't lose any data without the data nolonger making sense. Text files are a 
+good example for this as if they are compressed with lossy compression they will become unreadable and garbled.
+
+\section{Hardware and Software}
+Computing devies are made up of hardware and software. Hardware provides the physical components of the system
+the operating system whereas software is data stored on the hardware that is used to control the hardware.
+
+\subsection{System Software}
+
+\subsubsection{Operating Systems}
+Operating systems are core peices of software that run on almost every computing device
+with the notable exception of many smaller embedded devices. For the purpouses of the
+A level curriculum we need to know that they provide the following:
+
+\begin{itemize}
+	\item Security -- Operating systems manage accounts and file permissions on a system
+	\item File System -- Operating systems provide a file system for accessing files from disks, ramdisks, device files and IPC.
+	\item User Interface -- Operating Systems provide an interface for a user to use. For most desktop operating systems this
+    is a GUI or Graphical User Interface
+    \item Process Scheduling -- Operating Systems handle process scheduling and multiprocessing. They decide when and on what
+    physical thread a process should run on.
+    \item Memory Managment -- Operating Systems provide an interface for applications to safely allocate memory and protect
+    regions of memmory from being accessed by other applications. They also manage when memory should be "paged out" to a disk.
+    \item Utilities -- Operating systems often provide essential utillity software to keep the system maintained. Commontly
+    this includes a disk partitioner and defragger and on UNIX like systems a compiler toolchain such as GCC or Clang is
+    often included.
+\end{itemize}
+
+\subsubsection{Utilities}
+Utilities are software used to maintain the system.
+
+\subsubsection{Translators}
+
+\begin{itemize}
+	\item Inerpreter -- Interperates an input file line by line and stops when it reaches an error. Examples of 
+	this include CPython (the most common python interpreter) and bash (Bourne Again SHell)
+	\item Compiler -- Compilers take a source file containing a high level language and translate it into machine code
+	to be run on the system. Examples include Clang (The LLVM C Compiler) and Flang (A FORTRAN 99 implementation).
+	\item Assembler -- Assemblers take low level assembly code and convert it into machine code. Assemlbers are very simple
+	as assembly language tends to have an almost direct mapping to machine code. Examples include GNU as (An assembler that takes
+	the AT\&T assembly syntax) and Intels NASM assembler.
+\end{itemize}
+
+\subsubsection{Libraries}
+
+\begin{itemize}
+	\item Dynamic Libraries -- Dynamic libraries are linked by the dynamic linker to the program at runtime. These are more modern
+	than static libraries and exist to save on disk space, remove code duplication and provide an easier way to update libraries
+	that doesn't require recompling everything provided that the library remains ABI compatible.
+	\item Static Libraries -- Static libraries are the simplist kind of libraries and are linked at compile time. These must be used
+	by some software particularly for embedded environments and improves compatibility with different operating system versions since
+	it doesn't depend on having ABI compatible dynamic libraries. However they tend to produce much larger binaries since all of the
+	lbraries are included in the binary.
+\end{itemize}
+
+\subsection{Application Software}
+
+
 
 \end{document}
