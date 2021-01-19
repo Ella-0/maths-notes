@@ -537,10 +537,77 @@ Initial velocity is when $t = 0$
 
 
 \begin{gather}
-	s(t) = \int v(t) dt = \iint a(t) dt \\
+	s(t) = \int v(t) dt = \iint a(t) dt^2 \\
 	v(t) = \int a(t) dt
 \end{gather}
 
 Initial conditions. there will always be a constant. \textbf{TODO: LOOK UP ABOUT THIS}
+
+\section{Partial Fractions}
+
+\begin{gather}
+	\frac{ax^2+bx+c}{(x+e)(x+f)} = A + \frac{B}{x+e} + \frac{C}{x+f}\\
+	ax^2+bx+c = A(x+e)(x+f) + B(x+f) + C(x+e)\\
+	\text{Then substitute $-e$ and $-f$ to find $A$, $B$ or $C$} \\
+	\text{Or Equate Coefficients:} \\
+	a = A \\
+	b = A(e + f) + B + C \\
+	c = Aef + Be + Cf 
+\end{gather}
+
+\subsection{Repeated Powers}
+
+\begin{equation}
+	\frac{ax + b}{(x + c)^2} = \frac{A}{x+c} + \frac{B}{(x+c)^2}
+\end{equation}
+
+
+\section{Integration by subsitution}
+stuffs
+
+\begin{gather}
+	\int \frac{1}{x+2} dx \\
+	\text{let } p = x + 2 \\
+	\frac{dp}{dx} = 1 \\
+	\frac{dp}{1} = dx \\
+	\int \frac{1}{p}dp = \ln{\left |p \right | + C} \\
+	\ln \left |x + 2 \right | + C
+\end{gather}
+
+\section{Compound Angle Formule}
+
+\begin{gather}
+	\sin ( A \pm B ) \equiv \sin A \cos B \pm \cos A \sin B \\
+	\cos ( A \pm B ) \equiv \cos A \cos B \mp \sin A \sin B \\
+	\tan ( A \pm B ) \equiv \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B} \\
+	\tan ( A \pm B ) \equiv \frac{\sin(A \pm B)}{\cos (A \pm B)}
+\end{gather}
+
+\subsection{Double Angle Formule}
+
+\begin{gather}
+	\sin 2A \equiv 2 \sin A \cos A \\
+	\cos 2A \equiv \cos^2 A - \sin^2 A \\
+	\cos 2A \equiv 2\cos^2 A - (1 - \cos^2 A) \\
+	\cos 2A \equiv (1 - \sin^2 A) - \sin^2 A \\
+	\tan 2A \equiv \frac{2 \tan A}{1 - \tan^2 A}
+\end{gather}
+
+\subsection{Harmonic Form}
+
+\begin{gather}
+	a \sin \theta \pm b \cos \theta \equiv R \sin (\theta \pm \alpha) \\
+	a \cos \theta \pm b \sin \theta \equiv R \cos (\theta \mp \alpha)
+\end{gather}
+
+\begin{gather}
+	2 \sin x + 5 \cos x \equiv R \sin (x + \alpha)\\
+	2 \sin x + 5 \cos x \equiv R \sin x \cos \alpha + R \cos x \sin \alpha \\
+	R \cos \alpha = 2 \\
+	R \sin \alpha = 5 \\
+	\tan \alpha = \frac{R \sin \alpha}{R \cos \alpha} = \frac{5}{2} \\
+	(R \sin \alpha)^2 + (R \cos a)^2 \equiv R^2(\sin^2 \alpha + \cos ^2 \alpha) \equiv R^2 \\
+	\because \sin^2 \alpha + \cos^2 \alpha \equiv 1
+\end{gather}
 
 \end{document}
