@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+% or 
+\usepackage{amssymb}
+
+\usepackage{mathtools}
+\usepackage{siunitx}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\pgfplotsset{compat = newest}
+\usepackage{cancel}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\title{Further Maths}
+\maketitle
+
+\section{Complex Numbers}
+
+\subsection{Arithmetic Laws}
+\begin{gather}
+	\text{given that}\, a,b \in \mathbb{R}\, \text{then}\, (a + bi)\in \mathbb{C} \\
+	i^2 = -1 \\
+	(a+bi)i = ai - b \\
+	(a + bi) + (c + di) = (a + c) + (b + d)i \\
+	(a + bi)(a - bi) = a^2 + b^2 \\
+	(a + bi) + (a - bi) = 2a
+\end{gather}
+
+\subsubsection{Fractions}
+Rationalise the denominator
+\begin{gather}
+	\frac{a + bi}{c + di}
+	\times \frac{c - di}{c - di}
+	= \frac{(a + bi)(c - di)}{c^d + d^2}
+\end{gather}
+
+\subsection{Complex Conjigates}
+\begin{gather}
+	Z = a + b i \\
+	\overline{Z} = a - b i
+\end{gather}
+
+\section{Work, Energy and Power}
+\subsection{Work Done}
+$W\,\si{Nm}\,\left (\si{j} \right )$ is Work done, $F\,\si{N}$ is force, $x\,\si{m}$ is distance and $\theta$ is angle
+\subsubsection{Constant Force}
+\begin{equation}
+	W = Fx
+\end{equation}
+
+\subsubsection{Non Constant Force}
+
+\begin{equation}
+	W = \int^{x}_{0} F \,dx
+\end{equation}
+
+\subsubsection{Constant Force in Direction}
+
+\begin{equation}
+	W = F x \cos \theta
+\end{equation}
+
+\subsection{Power}
+$P\,\si{W}$ is power, $F\,\si{N}$ is force, $v\,\si{ms^{-1}}$ is velocity and $x\,\si{m}$ is distance
+
+\begin{gather}
+	P = \frac{Fx}{t} \\
+	P = Fv 
+\end{gather}
+
+
+\end{document}
