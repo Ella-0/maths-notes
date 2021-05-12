@@ -9,6 +9,7 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{patterns}
+\usepackage{gensymb}
 
 \pgfplotsset{compat = newest}
 \usepackage{cancel}
@@ -288,7 +289,7 @@ the gradient may allow one to trust a second.
 
 \begin{center}
     \begin{tabular}{l|l|l|l|l|l}
-     $S$ & $t_1$ & $t_2$ & $t_3$ & $\bar{t}$ & ${\bar{t}}^2$\\ \hline
+     $S$ & $t_1$ & $t_2$ & $t_3$ & $\overline{t}$ & ${\overline{t}}^2$\\ \hline
      0.50 & 0.314 & 0.316 & 0.315 & 0.315 & 0.0992 \\
      0.45 & 0.300 & 0.298 & 0.300 & 0.299 & 0.0894 \\
      0.40 & 0.284 & 0.283 & 0.284 & 0.284 & 0.0807 \\
@@ -303,7 +304,7 @@ the gradient may allow one to trust a second.
 \begin{axis}[
 	samples=50,
 	xlabel={$S$ Distance},
-	ylabel={$\bar{t}^2$ Time Squared}
+	ylabel={$\overline{t}^2$ Time Squared}
 ]
 
 	\addplot[mark=x, only marks] coordinates {
@@ -334,7 +335,7 @@ the gradient may allow one to trust a second.
 \subsection{Caculating Uncertanty (6)}
 \begin{center}
     \begin{tabular}{l|l|l|l|l|l}
-     $S$ & Range of $t$ & $0.5 \times t$ & Actual Uncertanty & $\bar{t}$ & ${\bar{t}}^2$\\ \hline
+     $S$ & Range of $t$ & $0.5 \times t$ & Actual Uncertanty & $\overline{t}$ & ${\overline{t}}^2$\\ \hline
      0.50 & 0.002 & 0.316 & 0.315 & 0.315 & 0.0992 \\
      0.45 & 0.002 & 0.298 & 0.300 & 0.299 & 0.0894 \\
      0.40 & 0.000 & 0.283 & 0.284 & 0.284 & 0.0807 \\
@@ -353,7 +354,7 @@ the gradient may allow one to trust a second.
 
 \begin{center}
     \begin{tabular}{l|l|l|l|l|l}
-     $S$ & $v_1$ & $v_2$ & $v_3$ & $\bar{v}$ & ${\bar{v}}^2$\\ \hline
+     $S$ & $v_1$ & $v_2$ & $v_3$ & $\overline{v}$ & ${\overline{v}}^2$\\ \hline
      0.50 & 3.282 & 3.302 & 3.382 & 3.322 & 11.036 \\
      0.45 & 3.065 & 3.116 & 3.206 & 3.129 & 9.791 \\
      0.40 & 2.874 & 2.998 & 3.082 & 2.985 & 8.910 \\
@@ -368,7 +369,7 @@ the gradient may allow one to trust a second.
 \begin{axis}[
 	samples=50,
 	xlabel={$S$ Distance},
-	ylabel={$\bar{v}^2$ Velocity Squared}
+	ylabel={$\overline{v}^2$ Velocity Squared}
 ]
 
 	\addplot[mark=x, only marks] plot [error bars/.cd, y dir = both, y explicit] coordinates {
@@ -390,7 +391,7 @@ the gradient may allow one to trust a second.
 
 \begin{gather}
 	S = \frac{1}{2} at^2 \\
-	\frac{\Delta \bar{v}^2}{\Delta{S}} = 23 \\
+	\frac{\Delta \overline{v}^2}{\Delta{S}} = 23 \\
 	a = \frac{1}{2} \times 23 = 11.5 \si{ms^{-1}}
 \end{gather}
 
@@ -439,4 +440,273 @@ Gravity is approximately constant
 \end{center}
 
 
+\section{Resistivity}
+
+\subsection{Results}
+
+\subsubsection{Copper}
+
+\begin{center}
+\begin{tabular}{l|l|l|ll}
+$l$ & $V$  & $I$  & $R$ &  \\ \cline{1-4}
+0.1 & 0.03 & 1.43 & 0.0209 & \\
+0.2 & 0.04 & 1.42 & 0.0281 & \\
+0.3 & 0.05 & 1.42 & 0.0352 & \\
+0.4 & 0.08 & 1.42 & 0.0563 & \\
+0.5 & 0.11 & 1.41 & 0.0780 & \\
+0.6 & 0.10 & 1.39 & 0.0719 & \\
+0.7 & 0.20 & 1.42 & 0.1408 & \\
+0.8 & 0.12 & 1.37 & 0.0876 & \\
+0.9 & 0.14 & 1.38 & 0.1014 & \\
+1.0 & 0.31 & 1.37 & 0.2262 & 
+\end{tabular}
+\end{center}
+
+\subsubsection{Constantan}
+
+\begin{center}
+\begin{tabular}{l|ll}
+$l$ & $R$ &  \\ \cline{1-2}
+0.1 & 2.6 & \\
+0.2 & 3.2 & \\
+0.3 & 3.2 & \\
+0.4 & 3.7 & \\
+0.5 & 3.8 & \\
+0.6 & 3.9 & \\
+0.7 & 4.2 & \\
+0.8 & 4.4 & \\
+0.9 & 4.7 & \\
+1.0 & 4.8 & 
+\end{tabular}
+\end{center}
+
+\subsubsection{Diameter}
+
+\subsubsection{Wire Diameter}
+
+\begin{center}
+\begin{tabular}{l|l|l|ll}
+$d_1$ & $d_2$ & $d_3$ & $\overline{d}$ \\ \cline{1-4}
+0.507 & 0.510 & 0.506 & 0.5077
+\end{tabular}
+\end{center}
+
+\subsection{Calculations}
+
+\begin{gather}
+	r = \frac{\overline{d}}{2} = 0.2538 \\
+	\rho = \frac{R}{l}\times A \\
+	A = r^2 \pi = 0.2538^2 \pi = 0.2024 \si{mm^2} \\
+	A = 0.2024 \times 10^{-6} \si{m^2}
+\end{gather}
+
+
+\subsubsection{Copper}
+
+\begin{gather}
+	\frac{R}{l} = m = 0.174 \\
+	\rho = 0.174 \times 0.2024 \times 10^{-6} = 0.35 \times 10^{-7} \si{\Omega m}
+\end{gather}
+
+\subsubsection{Constantan}
+
+\begin{gather}
+	\frac{R}{l} = m = \frac{\Delta y}{\Delta x} = \frac{19.5}{0.75} = 26 \\
+	\rho = 26 \times 0.2024 \times 10^{-6} = 5.2624 \times 10 ^{-6} \\
+	\rho = 5.3 \times 10^{-6} \si{\Omega m}
+\end{gather}
+
+\subsection{Error}
+
+\begin{gather}
+	\%err_d = \frac{0.005}{0.5077} = 0.0098 = 0.98\% \\
+	\%err_{d^2} = 2 \times \%err_d = 1.97\%
+\end{gather}
+
+\subsubsection{Copper}
+
+\begin{gather}
+	\text{Worse Line Of Best Fit (WLOBF):} \\
+	m_\text{wlobf} = 0.12 \\
+	\text{\% difference in gradient:} \\
+	\%err_m = \frac{0.174 - 0.12}{0.174} = 0.3103 = 31\% \\
+	\%err_{\rho} = \%err_m + \%err_d = 32.97\%
+\end{gather}
+\\
+The actual resistivity of Copper\footnote{according
+to http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/rstiv.html on 2021-03-29}:
+$0.168 \times 10^{-7}$ 
+
+\begin{gather}
+	\%diff_{\rho} = \left | \frac{0.168 - 0.35}{0.168} \right | = 1.083 = 108.3\% > 31\%
+\end{gather}
+Due to the the \% difference being larger than the estimated \% error, the
+results are not valid and there was likely systematic error as the whole \%
+difference can not be explained by error in the equipment alone
+
+\subsubsection{Constantan}
+
+\begin{gather}
+	\text{Worse Line Of Best Fit (WLOBF):} \\
+	m_\text{wlobf} = \frac{16.5}{0.8} = 20.625 \\
+	\text{\% difference in gradient:} \\
+	\%err_m = \frac{26 - 20.625}{26} = 0.2067 = 20.67\% \\
+	\%err_{\rho} = \%err_m + \%err_d = 22.64\%
+\end{gather}
+\\
+The actual resistivity of Constantan\footnote{according
+to http://hyperphysics.phy-astr.gsu.edu/hbase/Tables/rstiv.html on 2021-03-29}:
+$0.49 \times 10^{-6}$ 
+
+\begin{gather}
+	\%diff_{\rho} = \left | \frac{0.49 - 5.3}{0.49} \right | = 9.816 = 981.6\% > 22.64\%
+\end{gather}
+Due to the the \% difference being much larger than the estimated \% error, the
+results are not valid and there was likely systematic error as the whole \%
+difference can not be explained by error in the equipment alone
+
+\subsection{Questions}
+
+\subsubsection{Explain why the graph doesn't cross the origin}
+The resistance of the connecting wires and the contact resistance
+of the connection between the crocodile clips and the Constantan or
+Copper offset the graph preventing the resistance from ever being 0.
+
+\subsubsection{Explain how you might change the apparatus to calculate your value for the resistivity with greater resolution}
+Using higher resolution apparatus to measure the diameter of the wire and use
+a higher resolution voltmeter and ammeter
+
+\subsubsection{Explain why plotting a graph improves your accuracy}
+Plotting a graph allows one to quickly and easily take an average value
+by calculating the gradient of a line of best fit. Plotting a graph
+also makes it easier to spot anomalous results.
+
+\subsubsection{Explain why you need to use a wire to find the resistivity of a metal and explain what shape of sample would be suitable for a plastic}
+Wire is used because of it's constant cross section and long thin shape.
+the long thin shape helps to increase the resistance of the wire making it
+easier to measure. For plastics, the sample should be very short to reduce
+the resistance as much as possible. This is done because the resistance of
+plastic is so high it's not easily measurable.
+
+\subsubsection{Identify the sources of uncertainty in this experiment. Consider the accuracy (percentage difference) of your result and comment on the effect the uncertainies might have had}
+Contact resistance is not necessarily constant, temperature of the wire
+
+\subsubsection{Explain why the current through the wire should be small}
+A large current results in a greater amount of heat from the wire; this
+alters the resistive characteristics of the wire making the results inaccurate
+
+\break
+
+\section{EMF and Internal Resistance}
+
+\subsection{Results}
+
+\begin{center}
+\begin{tabular}{l|ll}
+$p.d\, (\si{V})$   & $I\, (\si{A})$  &  \\ \cline{1-2}
+0.110 & 0.532 & \\
+0.490 & 0.367 & \\
+0.706 & 0.277 & \\
+0.821 & 0.229 & \\
+0.888 & 0.201 & \\
+0.949 & 0.177 & \\
+1.008 & 0.152 & \\
+1.118 & 0.107 & \\
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Calculations}
+
+\begin{gather}
+	r = -m = - \frac{\Delta y}{\Delta x} = \frac{1.08}{49} = 0.02204 \si{k\Omega} \\
+	r = 22.0 \si{\Omega}
+\end{gather}
+\\
+Given to 3 significant figures because all original readings are 3 significant figures.
+
+\subsection{Accuracy}
+The results are likely accurate because $22.0 \si{\Omega}$ is within the manufacturing
+tollerence of the $22 \si{\Omega}$ resistor that was placed in series with the cell.
+
+\subsection{Questions}
+
+\subsubsection{When the internal resistance is large in comparison to the
+	external resistance, the terminal potential difference falls to a small value.
+	This is used to make high voltage supplies safe for use in a laboratory.
+	Explain how this makes the supply safe.}
+
+Making the internal resistance of a high voltage power supply much larger
+than the human bodies natural resistance (roughly $100 \si{k\Omega}$ for dry
+skin) greatly reduces the potential difference across the human body thus
+preventing a large enough current from flowing through the human body to do any
+significant damage.
+
+\subsubsection{It should not matter whether the voltmeter is connected across $R$
+	or across the cell. This is partly because of the low resistance of the
+	ammeter. Explain why. }
+
+Due to the ammeters negligible resistance, the potential difference across the
+ammeter is also negligible and thus can be ignored making the potential
+difference across the cell and $R$ effectively the same.
+
+\subsubsection{The intercept of your graph will be very close to the true value
+	for the emf of the cell. Account for any difference.}
+Errors in graph plotting and the voltmeter not having an infinite resistance.
+
+\subsubsection{Explain any difference between your value for r and the
+	manufacturer’s value.}
+The cell itself has an internal resistance ontop of the extern resister we
+added and the external resister has a 5\% manufacturing tollerence.
+
+\break
+
+\section{Wavelength of Laser Light}
+
+\subsection{Results}
+
+\begin{center}
+\begin{tabular}{l|l|l|l|l|l|ll}
+  & $x_1$ & $x_2$ & $x$ & $D$ & $\theta$        & $\lambda$         & \\ \cline{1-7}
+1 & 610   & 404   & 103 & 506 & $11.51 \degree$ & 6.3875            & \\
+2 & 703   & 303   & 200 & 506 & $21.57 \degree$ & $\times 10^{-17}$ &
+\end{tabular}
+\end{center}
+
+\subsection{Error}
+
+\begin{gather}
+	\%diff = \left | \frac{6.35 - 6.3875}{6.35} \right | = 0.0059 = 0.59 \%
+\end{gather}
+
+\subsection{Questions}
+
+\subsubsection{State the advantages of using laser light in this experiment}
+Lasers are bright making the maxima easy to see even for a large value of $D$.
+Lasers are monochromatic and coherent also helping to increase the clarity of
+the maximum.
+
+\subsubsection{Explain why a metre ruler is suitable for measuring the distance
+	in the experiment}
+Using a metre ruler gives a resolution of 1\si{mm} which gives a small enough
+uncertanty for the values of $x$ and $D$ for the purpose of this experiment.
+
+\subsubsection{Suppose that a white light laser were possible. Describe what
+	the diffraction maxima would look like}
+
+Which light is a mixture of multiple frequencies which each diffract
+differently. This results in the colours separating at the maxima making
+the inner part of the maxima look slightly blue and the outer part slightly
+red.
+
+\break
+
+\section{Photoelectric Effect}
+
+\begin{gather}
+	hf = \varphi + \frac{1}{2} mv^2 \\
+	eVs = hf - \varphi \\
+	Vs = \frac{h}{e}f - \frac{\varphi}{e}
+\end{gather}
 \end{document}

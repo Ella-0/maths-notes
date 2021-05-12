@@ -45,8 +45,158 @@ Rationalise the denominator
 \subsection{Complex Conjigates}
 \begin{gather}
 	Z = a + b i \\
-	\overline{Z} = a - b i
+	\overline{Z} = Z^* = a - b i
 \end{gather}
+
+\subsection{Solving Polynomial Equations}
+The quadratic formula can be used to solve quadratics with
+complex roots.
+\begin{gather}
+	x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
+	D = b^2 - 4ac \\
+	\text{when}\, D < 0 \\
+	x = \frac{-b \pm i\sqrt{-D}}{2a}
+\end{gather}
+
+\begin{gather}
+	az^2 + bz + c = 0 \\
+	z^2 + \frac{b}{a}z + \frac{c}{a} \\
+	\text{$\alpha$ and $\beta$ are roots} \\
+	(z - \alpha)(z - \beta) = 0\\
+	z^2 - \beta z - \alpha z + d \beta = 0 \\
+	z^2 - z(\alpha + \beta) + \alpha \beta = 0 \\
+	-\frac{b}{a} = \alpha + \beta \\
+	\frac{c}{a} = \alpha \beta
+\end{gather}
+
+\begin{gather}
+	z^3 - (\alpha + \beta + \gamma)z^2 + (\alpha \beta + \alpha \gamma + \beta \gamma) z - \alpha \beta \gamma \\
+	-\frac{b}{a} = \alpha + \beta + \gamma \\
+	\frac{c}{a} = \alpha \beta + \beta \gamma + \alpha \gamma \\
+	-\frac{d}{a} = \alpha \beta \gamma
+\end{gather}
+
+\begin{gather}
+	z^4
+	- (\alpha + \beta + \gamma + \delta) z^3
+	+ (\alpha \beta + \alpha \gamma + \alpha \delta + \beta \gamma + \beta \delta + \gamma \delta) z^2
+	- (\alpha \beta \gamma + \alpha \beta \delta + \alpha \gamma \delta + \beta \gamma \delta)z
+	+ \alpha \beta \gamma \delta \\
+	-\frac{b}{a} = \alpha + \beta + \gamma + \delta \\
+	\frac{c}{a} = \alpha \beta + \alpha \gamma + \alpha \delta + \beta \gamma + \beta \delta + \gamma \delta \\
+	-\frac{d}{a} = \alpha \beta \gamma + \alpha \beta \delta + \alpha \gamma \delta + \beta \gamma \delta \\
+	\frac{e}{a} = \alpha \beta \gamma \delta
+\end{gather}
+
+\subsection{Modulas and argument form}
+\begin{gather}
+	\text{let}\, z = a + bi \\
+	\text{modulus of}\, z \\
+	r = |z| = \sqrt{a^2 + b^2} \\
+	-\pi < \theta \le \pi \\
+	\tan \theta = \frac{a}{b} \\
+	\theta = \arctan \frac{a}{b}\\
+	z = r \angle \theta = r e^{i \cos \theta} =  r(\cos \theta + i \sin \theta) \\
+	\text{argument}\, z = \theta \\
+	\text{magnitude}\, z = r
+\end{gather}
+
+\subsection{Loci an Argand diagram}
+
+\subsubsection{Circle}
+You can draw loci in an Argand diagram These are the set of points they obey a given rule.
+\\\\
+the lucus points that satisfy $|z| = 4$ draw a circle of radius 4 around the origin.
+The following is a sketch of $|z - 3 + 5 i|$:
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle,
+			tick style={draw=none},
+			xticklabels={,,},
+			yticklabels={,,}
+		]
+			\draw (3,-5) circle [radius=5]; 
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+\subsubsection{Half Line}
+Half line is a locus of points satisfying $\arg(z - z_1) = \theta$.
+\\\\
+The following is a sketch of $\arg(z + 2 + 3i)$
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle,
+			tick style={draw=none},
+			xticklabels={,,},
+			yticklabels={,,}
+		]
+			\draw (-2,-3) -- (14,7.16);
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+
+\subsubsection{Perpendicular bisector}
+All the points satisfying $|z -2| = |z + 3i|$
+
+\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin=-10, xmax=10,
+    		ymin=-10, ymax=10,
+			axis lines=middle,
+			tick style={draw=none},
+			xticklabels={,,},
+			yticklabels={,,}
+		]
+			\draw (0,-3) -- (2,0);
+			\draw (-4,0.5) -- (4,-3.5);
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
+
+
+\subsubsection{Cartesian Equations for Complex Locus}
+
+\begin{gather}
+	|z - z_1| = r \\
+	|x + iy +  a + ib| = r \\
+	|(x + a) +i(y + b)| = r \\
+	\sqrt{(x + a)^2 + (y + b)^2} = r \\
+	(x + a)^2 + (y + b)^2 = r^2 \\
+	\text{radius} = r \\
+	\text{centre} = (-a, -b) \\
+	\\
+	\arg(z + z_1) = \theta \\
+	\arg(x + iy + a + ib) = \theta \\
+	\arg((x + a) + i(y + b)) = \theta \\
+	\arctan{\frac{y + b}{x + a}} = \theta \\
+	\frac{y + b}{x + a} = \tan \theta \\
+	y + b = (x + a) \tan \theta \\
+	y = (x + a) \tan \theta - b \\
+	x = (y + b) \cot \theta - a \\
+	\\
+	|z + z_1| = |z + z_2| \\
+	|x + iy + a + ib| = |x + iy + c + id| \\
+	|(x + a) + i(y + b)| = |(x + c) + i (y + d)| \\
+	\sqrt{(x + a)^2 + (y + b)^2} = \sqrt{(x + c)^2 + (y + d)^2} \\
+	(x + a)^2 + (y + b)^2 = (x + c)^2 + (y + d)^2 \\
+	(x^2 + 2ax + a^2) + (y^2 + 2by + b^2) = (x^2 + 2cx + c^2) + (y^2 + 2dy + d^2) \\
+	(2ax + a^2) + (2by + b^2) = (2cx + c^2) + (2dy + d^2) \\
+	2ax - 2cx + a^2 - c^2 = 2dy - 2by + d^2 - b^2 \\
+	2x(a - c) + a^2 - c^2 = 2y(d - b) + d^2 - b^2 \\
+	2(d - b)y = 2(a - c)x + a^2 + b^2 - c^2 - d^2 \\
+	y = \frac{2(a - c)x + a^2 + b^2 - c^2 - d^2}{2(d - b)} \\
+	y = \frac{a - c}{d - b} x + \frac{a^2 + d^2 - b^2 - c^2}{2(d - b)}
+\end{gather}
+
 
 \section{Work, Energy and Power}
 \subsection{Work Done}
@@ -73,8 +223,121 @@ $P\,\si{W}$ is power, $F\,\si{N}$ is force, $v\,\si{ms^{-1}}$ is velocity and $x
 
 \begin{gather}
 	P = \frac{Fx}{t} \\
-	P = Fv 
+	P = Fv
 \end{gather}
 
+\subsection{Energy}
+
+\subsubsection{Potential Energy}
+Energy that can potentially be used for
+bodies motion
+
+\begin{gather}
+	E_p = mgh
+\end{gather}
+
+\subsubsection{Kinetic Energy}
+Energy for bodies motion
+
+\begin{equation}
+	E_k = \frac{1}{2}mv^2
+\end{equation}
+
+\subsubsection{Conservation of Energy}
+The sum of energy in a system is constant provided energy is not transfered out of the system
+or into the system
+
+$-\Delta E_p$ is loss of Gravitation Potential Energy, $\Delta E_k$ is gain in Kinetic Energy
+and $W$ is Work Done against Air Resistance
+\begin{equation}
+	-\Delta E_p = \Delta E_k + W
+\end{equation}
+
+
+\section{Hooke's Law}
+Natural length $l$, Elastisity $\lambda$, Extension $x$
+
+\begin{gather}
+	T = kx \\
+	k = \frac{\lambda}{l} \\
+	T = \frac{\lambda x}{l}
+\end{gather}
+
+\begin{gather}
+	E_{\text{GPE}} = E_{\text{k}} + E_{\text{EPE}} \\
+	E_{\text{EPE}} = \int_0^x T\, dx = \int_0^x \frac{\lambda x}{l} dx \\
+	= \frac{\lambda}{2l}x^2
+\end{gather}
+
+\section{Maclurin Series}
+
+\begin{gather}
+	\mathrm{f}(x) = a_0 + a_1x + a_2 x^2 + a_3 x^3 + \cdots + a_r x^r \\
+	\mathrm{f}(0) = a_0 \\
+	\mathrm{f'}(x) = a_1 + 2a_2 x + 3a_3 x^2 + \cdots + r(a_r) x^{r-1} \\
+	\mathrm{f''}(x) = 2 \times 1 \times a_2 + 3 \times 2 \times a_3 x + \cdots + x^{r-3} \\
+	\cdots \\
+	\mathrm{f^r}(x) = r!a_r \\
+	\mathrm{f''}(0) = 2!a_2 \implies a_2 = \frac{\mathrm{f''}(0)}{2!} \\
+	\mathrm{f''}(0) = 3!a_2 \implies a_3 = \frac{\mathrm{f'''}(0)}{3!} \\
+	\mathrm{f''}(0) = r!a_2 \implies a_r = \frac{\mathrm{f^r}(0)}{r!} \\
+	\mathrm{f}(x) = \mathrm{f}(0) + \mathrm(f')(0)x + \frac{\mathrm{f''}(0)}{2!}x^2
+	+ \frac{\mathrm{f'''}(x)}{3!}x^3 + \cdots + \frac{\mathrm{f^r}(0)}{r!}x^r \\
+\end{gather}
+
+\begin{gather}
+	\mathrm{f}(x) = \sin x \\
+	\mathrm{f}(0) = 0 \\
+	\mathrm{f'}(x) = \cos x \\
+	\mathrm{f'}(0) = 1 \\
+	\mathrm{f''}(x) = - \sin x \\
+	\mathrm{f''}(0) = 0 \\
+	\mathrm{f'''}(x) = - \cos x \\
+	\mathrm{f'''}(0) = - 1
+\end{gather}
+
+\begin{gather}
+	\mathrm{f}(x) = e^{-\frac{x}{2}} \\
+	\mathrm{f}(0) = 1 \\
+	\mathrm{f'}(x) = -\frac{1}{2} e^{-\frac{x}{2}} \\
+	\mathrm{f'}(0) = -\frac{1}{2} \\
+	\mathrm{f''}(x) = \frac{1}{4} e^{-\frac{x}{2}} \\
+	\mathrm{f''}(0) = \frac{1}{}4 \\
+	\mathrm{f'''}(x) = -\frac{1}{8} e^{-\frac{x}{2}} \\
+	\mathrm{f'''}(0) = -\frac{1}{8} \\
+	e^{-\frac{x}{2}} \approx 1 - \frac{1}{2}x + \frac{\cfrac{1}{4}}{2!}x^2 \cdots \frac{\left (-\frac{x}{2} \right )^r}{r !}
+\end{gather}
+
+\begin{gather}
+	\mathrm{f}(x) = \ln (1 - x) \\
+	\ln ( 1 - 0 ) = 0 \\
+	\mathrm{f'}(x) = -\frac{1}{1-x}   \\
+	\mathrm{f'}(0) = - 1
+	\mathrm{f''}(x) = -\frac{1}{(1-x)^2} \\
+	\mathrm{f''}(0) = - 1
+	\mathrm{f'''}(x) = -\frac{2}{(1-x)^3} \\
+	\mathrm{f'''}(0) = - 2 \\
+	\ln ( 1 - x ) \approx -x - \frac{x^2}{2!} - \frac{2x^3}{3!}
+\end{gather}
+
+\begin{gather}
+	\mathrm{f}(x) = e^{i\theta} \\
+	\mathrm{f}(0) = 1 \\
+	\mathrm{f'}(x) =  i e^{i\theta} \\
+	\mathrm{f'}(0) =  i \\
+	\mathrm{f''}(0) =  -e^{i\theta} \\
+	\mathrm{f''}(0) =  -1 \\
+	\mathrm{f'''}(0) =  -ie^{i\theta} \\
+	\mathrm{f'''}(0) =  -i \\
+\end{gather}
+
+3 units of dimention, length, mass and time
+
+\section{Exponential form of complex numbers}
+
+\begin{equation}
+	e^{\mathbf{i}\theta} = (\cos \theta + \mathbf{i} \sin \theta)
+\end{equation}
 
 \end{document}
+

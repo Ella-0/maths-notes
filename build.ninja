@@ -7,13 +7,11 @@ rule zathura
 build build/prep.pdf: tex prep.tex
 build build/heg-prep.pdf: tex heg-prep.tex
 build bulid/lessons.pdf: tex lessons.tex
-build bulid/physics.pdf: tex physics.tex
+build build/physics.pdf: tex physics.tex
 build bulid/compsci.pdf: tex compsci.tex
 build build/prac.pdf: tex prac.tex
 build build/fmaths.pdf: tex fmaths.tex
 
 build zath: zathura build/fmaths.pdf
-
-
 
 default build/fmaths.pdf
